@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/cabral/ESTUDO/LibrasCode/librascode/build/app/intermediates/incremental/mergeReleaseResources/merged.dir/values-xxhdpi-v4/values-xxhdpi-v4.xml",
+            "map": [
+                {
+                    "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/jetified-core-1.9.13.aar/b43f05463db9840d6b32372c67fe8e3c/res/values-xxhdpi-v4/values-xxhdpi-v4.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,114",
+                        "endColumns": "58,55",
+                        "endOffsets": "109,165"
+                    }
+                }
+            ]
+        }
+    ]
+}

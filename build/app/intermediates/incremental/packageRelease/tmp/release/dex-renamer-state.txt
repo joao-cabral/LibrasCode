@@ -1,0 +1,4 @@
+#Sun Oct 13 22:41:39 AMT 2019
+base.0=/home/cabral/ESTUDO/LibrasCode/librascode/build/app/intermediates/transforms/dexMerger/release/0
+path.0=classes.dex
+renamed.0=classes.dex

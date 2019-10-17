@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/values-v24/values-v24.xml",
+            "map": [
+                {
+                    "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/c39b5049cf99e4db76352552c978d13d/res/values-v24/values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/incremental/mergeReleaseResources/merged.dir/values-v24/values-v24.xml",
+            "map": [
+                {
+                    "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/c39b5049cf99e4db76352552c978d13d/res/values-v24/values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
+                    }
+                }
+            ]
+        }
+    ]
+}

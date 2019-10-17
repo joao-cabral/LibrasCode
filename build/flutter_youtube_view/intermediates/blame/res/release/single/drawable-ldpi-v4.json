@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/drawable-ldpi-v4/ayp_ic_fullscreen_24dp.png",
+        "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/core-10.0.3.aar/a041abb350c0355d558c2dfe735cfef6/res/drawable-ldpi-v4/ayp_ic_fullscreen_24dp.png"
+    },
+    {
+        "merged": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/drawable-ldpi-v4/ayp_ic_youtube_24dp.png",
+        "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/core-10.0.3.aar/a041abb350c0355d558c2dfe735cfef6/res/drawable-ldpi-v4/ayp_ic_youtube_24dp.png"
+    },
+    {
+        "merged": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/drawable-ldpi-v4/ayp_ic_pause_36dp.png",
+        "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/core-10.0.3.aar/a041abb350c0355d558c2dfe735cfef6/res/drawable-ldpi-v4/ayp_ic_pause_36dp.png"
+    },
+    {
+        "merged": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/drawable-ldpi-v4/ayp_ic_menu_24dp.png",
+        "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/core-10.0.3.aar/a041abb350c0355d558c2dfe735cfef6/res/drawable-ldpi-v4/ayp_ic_menu_24dp.png"
+    },
+    {
+        "merged": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/drawable-ldpi-v4/ayp_ic_fullscreen_exit_24dp.png",
+        "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/core-10.0.3.aar/a041abb350c0355d558c2dfe735cfef6/res/drawable-ldpi-v4/ayp_ic_fullscreen_exit_24dp.png"
+    },
+    {
+        "merged": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/drawable-ldpi-v4/ayp_ic_play_36dp.png",
+        "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/core-10.0.3.aar/a041abb350c0355d558c2dfe735cfef6/res/drawable-ldpi-v4/ayp_ic_play_36dp.png"
+    }
+]

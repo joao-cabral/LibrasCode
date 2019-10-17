@@ -1,0 +1,82 @@
+[
+    {
+        "merged": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/color/abc_tint_switch_track.xml",
+        "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/c39b5049cf99e4db76352552c978d13d/res/color/abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/color/abc_primary_text_material_dark.xml",
+        "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/c39b5049cf99e4db76352552c978d13d/res/color/abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/color/abc_secondary_text_material_dark.xml",
+        "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/c39b5049cf99e4db76352552c978d13d/res/color/abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/color/abc_hint_foreground_material_dark.xml",
+        "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/c39b5049cf99e4db76352552c978d13d/res/color/abc_hint_foreground_material_dark.xml"
+    },
+    {
+        "merged": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/color/abc_tint_edittext.xml",
+        "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/c39b5049cf99e4db76352552c978d13d/res/color/abc_tint_edittext.xml"
+    },
+    {
+        "merged": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/color/abc_primary_text_disable_only_material_light.xml",
+        "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/c39b5049cf99e4db76352552c978d13d/res/color/abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/color/abc_primary_text_material_light.xml",
+        "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/c39b5049cf99e4db76352552c978d13d/res/color/abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/color/abc_tint_btn_checkable.xml",
+        "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/c39b5049cf99e4db76352552c978d13d/res/color/abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/color/abc_tint_spinner.xml",
+        "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/c39b5049cf99e4db76352552c978d13d/res/color/abc_tint_spinner.xml"
+    },
+    {
+        "merged": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/color/switch_thumb_material_dark.xml",
+        "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/c39b5049cf99e4db76352552c978d13d/res/color/switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/color/abc_btn_colored_text_material.xml",
+        "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/c39b5049cf99e4db76352552c978d13d/res/color/abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/color/abc_primary_text_disable_only_material_dark.xml",
+        "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/c39b5049cf99e4db76352552c978d13d/res/color/abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/color/abc_hint_foreground_material_light.xml",
+        "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/c39b5049cf99e4db76352552c978d13d/res/color/abc_hint_foreground_material_light.xml"
+    },
+    {
+        "merged": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/color/abc_tint_default.xml",
+        "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/c39b5049cf99e4db76352552c978d13d/res/color/abc_tint_default.xml"
+    },
+    {
+        "merged": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/color/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/c39b5049cf99e4db76352552c978d13d/res/color/abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/color/abc_secondary_text_material_light.xml",
+        "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/c39b5049cf99e4db76352552c978d13d/res/color/abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/color/abc_search_url_text.xml",
+        "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/c39b5049cf99e4db76352552c978d13d/res/color/abc_search_url_text.xml"
+    },
+    {
+        "merged": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/color/abc_tint_seek_thumb.xml",
+        "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/c39b5049cf99e4db76352552c978d13d/res/color/abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/color/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/c39b5049cf99e4db76352552c978d13d/res/color/abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "/home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/res/merged/release/color/switch_thumb_material_light.xml",
+        "source": "/home/cabral/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/c39b5049cf99e4db76352552c978d13d/res/color/switch_thumb_material_light.xml"
+    }
+]

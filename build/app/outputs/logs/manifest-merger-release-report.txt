@@ -1,0 +1,220 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:1:1-35:12
+INJECTED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:1:1-35:12
+INJECTED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:1:1-35:12
+INJECTED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:1:1-35:12
+MERGED from [:barcode_scan] /home/cabral/ESTUDO/LibrasCode/librascode/build/barcode_scan/intermediates/library_manifest/release/AndroidManifest.xml:2:1-17:12
+MERGED from [:flutter_youtube_view] /home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/library_manifest/release/AndroidManifest.xml:2:1-7:12
+MERGED from [com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.3] /home/cabral/.gradle/caches/transforms-1/files-1.1/core-10.0.3.aar/a041abb350c0355d558c2dfe735cfef6/AndroidManifest.xml:2:1-14:12
+MERGED from [com.google.android.material:material:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/658126e6e2bae36b1d6acad18f38f331/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.0.2] /home/cabral/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/c39b5049cf99e4db76352552c978d13d/AndroidManifest.xml:17:1-22:12
+MERGED from [me.dm7.barcodescanner:zxing:1.9.13] /home/cabral/.gradle/caches/transforms-1/files-1.1/zxing-1.9.13.aar/19fd9085e1307c05df6790510c6eec3b/AndroidManifest.xml:2:1-13:12
+MERGED from [me.dm7.barcodescanner:core:1.9.13] /home/cabral/.gradle/caches/transforms-1/files-1.1/jetified-core-1.9.13.aar/b43f05463db9840d6b32372c67fe8e3c/AndroidManifest.xml:2:1-13:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0.aar/4b9898d8824203253bcbb071b24799b4/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0.aar/b20c8e03cdff7366d6b1621739311f11/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/recyclerview-1.0.0.aar/f691bff9ac420dcba32855dd79fcc0aa/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0.aar/1e36c7817ecb4b0984a6fe1fc72fefd4/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/31998cb004d2e4564bd453c6db3d93a7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/b516920364fcd37c0368faf8963d784b/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/transition-1.0.0.aar/562874f96eba8aa978066819a9a6edcc/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/cardview-1.0.0.aar/1c77f67e4d9d8fc1b06a4b772e0cc1e8/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /home/cabral/.gradle/caches/transforms-1/files-1.1/vectordrawable-1.0.1.aar/45578391f78002ceb6de79af8b07e34a/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/0d4cdf46edf25518a248959d87198c06/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0.aar/438d22924431319963e23e5a93e36d85/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/fc30472c587727eb1b24059bed936ea7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0.aar/6055380099341879b83cb5c318069087/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/5a962fa7e52fb700895501b22373a7f8/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/33d6a613eeb3733fed364a4a0506c5ca/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0.aar/0d9beccbe20a4d2f5a44f3a532111452/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/a73b2537d02b85b0c7ee08150d9fd218/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media:media:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/media-1.0.0.aar/1caa45096191d636c64d391430bffc37/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.0.1] /home/cabral/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/bb042d1066860197baccf151606f2dcc/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/93207783ad65f730e6cb72c988b63316/AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0.aar/7e168e812831ee101da5d4f7db0bc84f/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0.aar/a1aa39b61f883b33fc9c257dd600b1d1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/41e0614ba6f6d3b6701ed272b30b9e8a/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0.aar/78047ff9866515582966ee4734dc7cee/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/a9ec57ef73dd4b78d71e163ec45082d5/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/ef9aa1e357bcf15a2514cd40c0fe61b1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0.aar/a267114521810ddeea7c6ee465798d26/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/1cada5b82ada65173e6374e9b290b2b5/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/25c9ad9f15250450a3e229c017034e38/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/a02fdc7d14ba77d3a4d9e314d39e6b74/AndroidManifest.xml:17:1-22:12
+INJECTED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:1:1-35:12
+INJECTED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:1:1-35:12
+INJECTED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:1:1-35:12
+	package
+		ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:2:5-37
+		INJECTED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:1:1-35:12
+		INJECTED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:1:1-35:12
+		INJECTED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:4:5-66
+MERGED from [com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.3] /home/cabral/.gradle/caches/transforms-1/files-1.1/core-10.0.3.aar/a041abb350c0355d558c2dfe735cfef6/AndroidManifest.xml:11:5-67
+MERGED from [com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.3] /home/cabral/.gradle/caches/transforms-1/files-1.1/core-10.0.3.aar/a041abb350c0355d558c2dfe735cfef6/AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:4:22-64
+uses-permission#android.permission.CAMERA
+ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:5:5-65
+MERGED from [:barcode_scan] /home/cabral/ESTUDO/LibrasCode/librascode/build/barcode_scan/intermediates/library_manifest/release/AndroidManifest.xml:11:5-65
+MERGED from [:barcode_scan] /home/cabral/ESTUDO/LibrasCode/librascode/build/barcode_scan/intermediates/library_manifest/release/AndroidManifest.xml:11:5-65
+	android:name
+		ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:5:22-62
+application
+ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:11:5-34:19
+MERGED from [:barcode_scan] /home/cabral/ESTUDO/LibrasCode/librascode/build/barcode_scan/intermediates/library_manifest/release/AndroidManifest.xml:13:5-15:19
+MERGED from [:barcode_scan] /home/cabral/ESTUDO/LibrasCode/librascode/build/barcode_scan/intermediates/library_manifest/release/AndroidManifest.xml:13:5-15:19
+MERGED from [com.google.android.material:material:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/658126e6e2bae36b1d6acad18f38f331/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/658126e6e2bae36b1d6acad18f38f331/AndroidManifest.xml:22:5-20
+MERGED from [me.dm7.barcodescanner:zxing:1.9.13] /home/cabral/.gradle/caches/transforms-1/files-1.1/zxing-1.9.13.aar/19fd9085e1307c05df6790510c6eec3b/AndroidManifest.xml:11:5-20
+MERGED from [me.dm7.barcodescanner:zxing:1.9.13] /home/cabral/.gradle/caches/transforms-1/files-1.1/zxing-1.9.13.aar/19fd9085e1307c05df6790510c6eec3b/AndroidManifest.xml:11:5-20
+MERGED from [me.dm7.barcodescanner:core:1.9.13] /home/cabral/.gradle/caches/transforms-1/files-1.1/jetified-core-1.9.13.aar/b43f05463db9840d6b32372c67fe8e3c/AndroidManifest.xml:11:5-20
+MERGED from [me.dm7.barcodescanner:core:1.9.13] /home/cabral/.gradle/caches/transforms-1/files-1.1/jetified-core-1.9.13.aar/b43f05463db9840d6b32372c67fe8e3c/AndroidManifest.xml:11:5-20
+MERGED from [androidx.core:core:1.0.1] /home/cabral/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/bb042d1066860197baccf151606f2dcc/AndroidManifest.xml:22:5-89
+MERGED from [androidx.core:core:1.0.1] /home/cabral/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/bb042d1066860197baccf151606f2dcc/AndroidManifest.xml:22:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/93207783ad65f730e6cb72c988b63316/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/93207783ad65f730e6cb72c988b63316/AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.0.1] /home/cabral/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/bb042d1066860197baccf151606f2dcc/AndroidManifest.xml:22:18-86
+	android:label
+		ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:13:9-36
+	android:icon
+		ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:14:9-43
+	android:name
+		ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:12:9-57
+activity#com.example.librascode.MainActivity
+ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:15:9-33:20
+	android:launchMode
+		ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:17:13-43
+	android:hardwareAccelerated
+		ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:20:13-47
+	android:windowSoftInputMode
+		ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:21:13-55
+	android:configChanges
+		ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:19:13-144
+	android:theme
+		ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:18:13-47
+	android:name
+		ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:16:13-41
+meta-data#io.flutter.app.android.SplashScreenUntilFirstFrame
+ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:26:13-28:40
+	android:value
+		ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:28:17-37
+	android:name
+		ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:27:17-82
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:29:13-32:29
+action#android.intent.action.MAIN
+ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:30:17-68
+	android:name
+		ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:30:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:31:17-76
+	android:name
+		ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml:31:27-74
+uses-sdk
+INJECTED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml
+MERGED from [:barcode_scan] /home/cabral/ESTUDO/LibrasCode/librascode/build/barcode_scan/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:barcode_scan] /home/cabral/ESTUDO/LibrasCode/librascode/build/barcode_scan/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:flutter_youtube_view] /home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_youtube_view] /home/cabral/ESTUDO/LibrasCode/librascode/build/flutter_youtube_view/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
+MERGED from [com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.3] /home/cabral/.gradle/caches/transforms-1/files-1.1/core-10.0.3.aar/a041abb350c0355d558c2dfe735cfef6/AndroidManifest.xml:7:5-9:41
+MERGED from [com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.3] /home/cabral/.gradle/caches/transforms-1/files-1.1/core-10.0.3.aar/a041abb350c0355d558c2dfe735cfef6/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.material:material:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/658126e6e2bae36b1d6acad18f38f331/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/658126e6e2bae36b1d6acad18f38f331/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.2] /home/cabral/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/c39b5049cf99e4db76352552c978d13d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.2] /home/cabral/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/c39b5049cf99e4db76352552c978d13d/AndroidManifest.xml:20:5-44
+MERGED from [me.dm7.barcodescanner:zxing:1.9.13] /home/cabral/.gradle/caches/transforms-1/files-1.1/zxing-1.9.13.aar/19fd9085e1307c05df6790510c6eec3b/AndroidManifest.xml:7:5-9:41
+MERGED from [me.dm7.barcodescanner:zxing:1.9.13] /home/cabral/.gradle/caches/transforms-1/files-1.1/zxing-1.9.13.aar/19fd9085e1307c05df6790510c6eec3b/AndroidManifest.xml:7:5-9:41
+MERGED from [me.dm7.barcodescanner:core:1.9.13] /home/cabral/.gradle/caches/transforms-1/files-1.1/jetified-core-1.9.13.aar/b43f05463db9840d6b32372c67fe8e3c/AndroidManifest.xml:7:5-9:41
+MERGED from [me.dm7.barcodescanner:core:1.9.13] /home/cabral/.gradle/caches/transforms-1/files-1.1/jetified-core-1.9.13.aar/b43f05463db9840d6b32372c67fe8e3c/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0.aar/4b9898d8824203253bcbb071b24799b4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0.aar/4b9898d8824203253bcbb071b24799b4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0.aar/b20c8e03cdff7366d6b1621739311f11/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0.aar/b20c8e03cdff7366d6b1621739311f11/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/recyclerview-1.0.0.aar/f691bff9ac420dcba32855dd79fcc0aa/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/recyclerview-1.0.0.aar/f691bff9ac420dcba32855dd79fcc0aa/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0.aar/1e36c7817ecb4b0984a6fe1fc72fefd4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0.aar/1e36c7817ecb4b0984a6fe1fc72fefd4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/31998cb004d2e4564bd453c6db3d93a7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/31998cb004d2e4564bd453c6db3d93a7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/b516920364fcd37c0368faf8963d784b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/b516920364fcd37c0368faf8963d784b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/transition-1.0.0.aar/562874f96eba8aa978066819a9a6edcc/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/transition-1.0.0.aar/562874f96eba8aa978066819a9a6edcc/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/cardview-1.0.0.aar/1c77f67e4d9d8fc1b06a4b772e0cc1e8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/cardview-1.0.0.aar/1c77f67e4d9d8fc1b06a4b772e0cc1e8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /home/cabral/.gradle/caches/transforms-1/files-1.1/vectordrawable-1.0.1.aar/45578391f78002ceb6de79af8b07e34a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /home/cabral/.gradle/caches/transforms-1/files-1.1/vectordrawable-1.0.1.aar/45578391f78002ceb6de79af8b07e34a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/0d4cdf46edf25518a248959d87198c06/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/0d4cdf46edf25518a248959d87198c06/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0.aar/438d22924431319963e23e5a93e36d85/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0.aar/438d22924431319963e23e5a93e36d85/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/fc30472c587727eb1b24059bed936ea7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/fc30472c587727eb1b24059bed936ea7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0.aar/6055380099341879b83cb5c318069087/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0.aar/6055380099341879b83cb5c318069087/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/5a962fa7e52fb700895501b22373a7f8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/5a962fa7e52fb700895501b22373a7f8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/33d6a613eeb3733fed364a4a0506c5ca/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/33d6a613eeb3733fed364a4a0506c5ca/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0.aar/0d9beccbe20a4d2f5a44f3a532111452/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0.aar/0d9beccbe20a4d2f5a44f3a532111452/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/a73b2537d02b85b0c7ee08150d9fd218/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/a73b2537d02b85b0c7ee08150d9fd218/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/media-1.0.0.aar/1caa45096191d636c64d391430bffc37/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/media-1.0.0.aar/1caa45096191d636c64d391430bffc37/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.1] /home/cabral/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/bb042d1066860197baccf151606f2dcc/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.1] /home/cabral/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/bb042d1066860197baccf151606f2dcc/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/93207783ad65f730e6cb72c988b63316/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/93207783ad65f730e6cb72c988b63316/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0.aar/7e168e812831ee101da5d4f7db0bc84f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0.aar/7e168e812831ee101da5d4f7db0bc84f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0.aar/a1aa39b61f883b33fc9c257dd600b1d1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0.aar/a1aa39b61f883b33fc9c257dd600b1d1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/41e0614ba6f6d3b6701ed272b30b9e8a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/41e0614ba6f6d3b6701ed272b30b9e8a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0.aar/78047ff9866515582966ee4734dc7cee/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0.aar/78047ff9866515582966ee4734dc7cee/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/a9ec57ef73dd4b78d71e163ec45082d5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/a9ec57ef73dd4b78d71e163ec45082d5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/ef9aa1e357bcf15a2514cd40c0fe61b1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/ef9aa1e357bcf15a2514cd40c0fe61b1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0.aar/a267114521810ddeea7c6ee465798d26/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0.aar/a267114521810ddeea7c6ee465798d26/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/1cada5b82ada65173e6374e9b290b2b5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/1cada5b82ada65173e6374e9b290b2b5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/25c9ad9f15250450a3e229c017034e38/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/25c9ad9f15250450a3e229c017034e38/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/a02fdc7d14ba77d3a4d9e314d39e6b74/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/cabral/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/a02fdc7d14ba77d3a4d9e314d39e6b74/AndroidManifest.xml:20:5-44
+INJECTED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/cabral/ESTUDO/LibrasCode/librascode/android/app/src/main/AndroidManifest.xml
+activity#com.apptreesoftware.barcodescan.BarcodeScannerActivity
+ADDED from [:barcode_scan] /home/cabral/ESTUDO/LibrasCode/librascode/build/barcode_scan/intermediates/library_manifest/release/AndroidManifest.xml:14:9-91
+	android:name
+		ADDED from [:barcode_scan] /home/cabral/ESTUDO/LibrasCode/librascode/build/barcode_scan/intermediates/library_manifest/release/AndroidManifest.xml:14:19-88
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.3] /home/cabral/.gradle/caches/transforms-1/files-1.1/core-10.0.3.aar/a041abb350c0355d558c2dfe735cfef6/AndroidManifest.xml:12:5-79
+	android:name
+		ADDED from [com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.3] /home/cabral/.gradle/caches/transforms-1/files-1.1/core-10.0.3.aar/a041abb350c0355d558c2dfe735cfef6/AndroidManifest.xml:12:22-76
