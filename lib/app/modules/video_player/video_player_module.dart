@@ -11,6 +11,6 @@ class VideoPlayerModule extends LibrasCodeListModule {
             create: (_) => VideoPlayerController(),
           ),
         ], routers: {
-          '/history': (context) => const VideoPlayerPage()
+          '/video-player': (context) => const VideoPlayerPage()
         });
 }
