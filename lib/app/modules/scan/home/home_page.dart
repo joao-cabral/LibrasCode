@@ -5,8 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:librascode/app/modules/scan/home/home_controller.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
-import '../../../core/components/bottom_app_bar_component.dart';
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -25,6 +23,7 @@ class _HomePageState extends State<HomePage> {
     controller.scannedDataStream.listen((data) {
       if (data.code != null && data.code!.contains('://')) {
         homeController.result = data.code;
+        controller.stopCamera();
         Navigator.of(context).pushNamed('/video-player');
       }
     });
@@ -108,7 +107,10 @@ class _HomePageState extends State<HomePage> {
           elevation: 8,
           backgroundColor: Colors.white,
           shape: const CircleBorder(),
-          onPressed: () => {setState(() => isReadyScan = !isReadyScan)},
+          onPressed: () => {
+            // setState(() => isReadyScan = !isReadyScan)
+            Navigator.of(context).pushNamed('/video-player')
+          },
           tooltip: 'QRCode',
           child: const Icon(
             Icons.qr_code_scanner_rounded,
@@ -117,7 +119,6 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: const BottomAppBarComponent(),
     );
   }
 
