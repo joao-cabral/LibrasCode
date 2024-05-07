@@ -1,22 +1,19 @@
-import 'package:flutter/material.dart';
-import 'package:librascode/app/core/database/sqlite_connection_factory.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
-import 'app_widget.dart';
+import 'modules/home/home_page.dart';
+import 'modules/video_player/video_player_page.dart';
 
-class AppModule extends StatelessWidget {
-  const AppModule({super.key});
+class AppModule extends Module {
+  @override
+  void binds(i) {}
 
   @override
-  Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        Provider(
-          create: (_) => SqliteConnectionFactory(),
-          lazy: false,
-        )
-      ],
-      child: const AppWidget(),
+  void routes(r) {
+    r.child('/', child: (context) => const HomePage());
+    r.child(
+      '/video-player',
+      child: (context) =>
+          VideoPlayerPage(videoId: r.args.queryParams['videoId']),
     );
   }
 }

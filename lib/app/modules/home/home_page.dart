@@ -1,8 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:librascode/app/modules/scan/home/home_controller.dart';
+import 'package:librascode/app/modules/home/home_controller.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,14 +18,21 @@ class _HomePageState extends State<HomePage> {
 
   QRViewController? controller;
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
-  bool isReadyScan = false;
+  bool isReadyScan = true;
+
+  //Returns only videoID
+  String handleURL(String value) {
+    return value.split('=')[1];
+  }
 
   void onQRView(QRViewController controller) {
     controller.scannedDataStream.listen((data) {
-      if (data.code != null && data.code!.contains('://')) {
-        homeController.result = data.code;
-        controller.stopCamera();
-        Navigator.of(context).pushNamed('/video-player');
+      if (data.code != null && data.code!.contains('youtube')) {
+        Modular.to.pushNamed(
+          '/video-player?videoId=${handleURL(data.code!)}',
+        );
+      } else {
+        //call a toast with error
       }
     });
   }
@@ -41,7 +49,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void dispose() {
-    controller?.dispose();
+    controller?.stopCamera();
     super.dispose();
   }
 
@@ -52,16 +60,17 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       appBar: AppBar(
-          centerTitle: true,
-          title: Text(
-            'LibrasCode',
-            style: GoogleFonts.robotoCondensed(
-              textStyle: const TextStyle(fontSize: 24),
-              fontWeight: FontWeight.bold,
-              color: Colors.grey,
-            ),
-            textAlign: TextAlign.center,
-          )),
+        centerTitle: true,
+        title: Text(
+          'LibrasCode',
+          style: GoogleFonts.robotoCondensed(
+            textStyle: const TextStyle(fontSize: 24),
+            fontWeight: FontWeight.bold,
+            color: Colors.grey,
+          ),
+          textAlign: TextAlign.center,
+        ),
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -89,7 +98,7 @@ class _HomePageState extends State<HomePage> {
           SizedBox(
             width: screenWidth * 0.6,
             child: Text(
-              'LEIA O QRCODE DA OBRA',
+              'LEIA O QRCODE',
               style: GoogleFonts.robotoCondensed(
                 textStyle: const TextStyle(fontSize: 28),
                 fontWeight: FontWeight.bold,
@@ -100,25 +109,25 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      floatingActionButton: SizedBox(
-        height: 60,
-        width: 60,
-        child: FloatingActionButton(
-          elevation: 8,
-          backgroundColor: Colors.white,
-          shape: const CircleBorder(),
-          onPressed: () => {
-            // setState(() => isReadyScan = !isReadyScan)
-            Navigator.of(context).pushNamed('/video-player')
-          },
-          tooltip: 'QRCode',
-          child: const Icon(
-            Icons.qr_code_scanner_rounded,
-            size: 35,
-          ),
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      // floatingActionButton: SizedBox(
+      //   height: 60,
+      //   width: 60,
+      //   child: FloatingActionButton(
+      //     elevation: 8,
+      //     backgroundColor: Colors.white,
+      //     shape: const CircleBorder(),
+      //     onPressed: () => {
+      //       setState(() => isReadyScan = !isReadyScan)
+      //       // Navigator.of(context).pushNamed('/video-player')
+      //     },
+      //     tooltip: 'QRCode',
+      //     child: const Icon(
+      //       Icons.qr_code_scanner_rounded,
+      //       size: 35,
+      //     ),
+      //   ),
+      // ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 
