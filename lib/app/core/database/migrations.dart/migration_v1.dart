@@ -5,11 +5,11 @@ class MigrationV1 implements Migration {
   @override
   void create(Batch batch) {
     batch.execute('''
-      create table history(
+      CREATE TABLE history(
         id Integer primary key autoincrement,
-        video_id TEXT NOT NULL,
-        title varchar(500),
-        description varchar(500),
+        video_id text not null,
+        title TEXT,
+        description text null,
         thumbnail_url TEXT,
         watch_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       )
