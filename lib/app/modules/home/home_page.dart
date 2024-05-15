@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:librascode/app/core/database/sqlite_connection_factory.dart';
+import 'package:librascode/app/modules/core/database/sqlite_connection_factory.dart';
 import 'package:librascode/app/modules/home/home_controller.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
@@ -28,14 +28,14 @@ class _HomePageState extends State<HomePage> {
   }
 
   void onQRView(QRViewController controller) {
-    controller.scannedDataStream.listen((data) {
+    controller.scannedDataStream.firstWhere((data) {
       if (data.code != null && data.code!.contains('youtube')) {
         Modular.to.pushNamed(
-          '/video-player?videoId=${handleURL(data.code!)}',
+          '/video-player/?videoId=${handleURL(data.code!)}',
         );
-      } else {
-        //call a toast with error
+        return true;
       }
+      return false;
     });
   }
 
@@ -57,7 +57,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    sqliteConnection.openConnection();
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
 
