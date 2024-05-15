@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:librascode/app/core/database/sqlite_adm_connection.dart';
+import 'package:librascode/app/modules/core/database/sqlite_adm_connection.dart';
 
 class AppWidget extends StatefulWidget {
   const AppWidget({super.key});

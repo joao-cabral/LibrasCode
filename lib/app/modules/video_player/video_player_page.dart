@@ -1,27 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:librascode/app/core/factories/dialog/dialog_actions.dart';
-import 'package:librascode/app/core/factories/dialog/dialog_factory.dart';
+import 'package:librascode/app/modules/core/factories/dialog/dialog_actions.dart';
+import 'package:librascode/app/modules/core/factories/dialog/dialog_factory.dart';
 import 'package:librascode/app/modules/video_player/video_player_controller.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class VideoPlayerPage extends StatefulWidget {
   final String? videoId;
-  const VideoPlayerPage({Key? key, this.videoId}) : super(key: key);
-
+  final VideoPlayerController controller;
+  const VideoPlayerPage({Key? key, this.videoId, required this.controller})
+      : super(key: key);
   @override
   State<VideoPlayerPage> createState() => _VideoPlayerPageState();
 }
 
 class _VideoPlayerPageState extends State<VideoPlayerPage> {
   late YoutubePlayerController _playerController;
-  final controller = VideoPlayerController();
 
   @override
   void initState() {
     _playerController =
-        controller.configYoutubePLayer(widget.videoId ?? 'ZtMzB5CoekE');
+        widget.controller.configYoutubePLayer(widget.videoId ?? 'ZtMzB5CoekE');
+
+    _playerController.stream.firstWhere((data) {
+      if (data.metaData.videoId.isNotEmpty) {
+        widget.controller.saveVideo(data.metaData);
+        return true;
+      }
+      return false;
+    });
+
     super.initState();
   }
 
