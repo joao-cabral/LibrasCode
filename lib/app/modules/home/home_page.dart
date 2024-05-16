@@ -1,59 +1,19 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:librascode/app/modules/core/database/sqlite_connection_factory.dart';
-import 'package:librascode/app/modules/home/home_controller.dart';
-import 'package:qr_code_scanner/qr_code_scanner.dart';
+
+import 'home_controller.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final HomeController controller;
+  const HomePage({super.key, required this.controller});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomePage> createState() => HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
-  final homeController = HomeController();
-  final sqliteConnection = Modular.get<SqliteConnectionFactory>();
-
-  QRViewController? controller;
-  final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
-  bool isReadyScan = true;
-
-  //Returns only videoID
-  String handleURL(String value) {
-    return value.split('=')[1];
-  }
-
-  void onQRView(QRViewController controller) {
-    controller.scannedDataStream.firstWhere((data) {
-      if (data.code != null && data.code!.contains('youtube')) {
-        Modular.to.pushNamed(
-          '/video-player/?videoId=${handleURL(data.code!)}',
-        );
-        return true;
-      }
-      return false;
-    });
-  }
-
-  //develop
-  @override
-  void reassemble() {
-    super.reassemble();
-    if (Platform.isAndroid) {
-      controller!.pauseCamera();
-    }
-    controller!.resumeCamera();
-  }
-
-  @override
-  void dispose() {
-    controller?.stopCamera();
-    super.dispose();
-  }
+class HomePageState extends State<HomePage> {
+  // final sqliteConnection = Modular.get<SqliteConnectionFactory>();
 
   @override
   Widget build(BuildContext context) {
@@ -73,93 +33,88 @@ class _HomePageState extends State<HomePage> {
           textAlign: TextAlign.center,
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          if (isReadyScan)
-            Center(
-              child: SizedBox(
-                width: screenWidth * 0.6,
-                height: screenHeight * 0.3,
-                child: _buildQrView(context),
+      body: LayoutBuilder(builder: (context, constrains) {
+        return SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+                minHeight: constrains.maxHeight, minWidth: constrains.maxWidth),
+            child: Container(
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Center(
+                    child: Container(
+                      color: Colors.grey,
+                      width: screenWidth * 0.6,
+                      height: screenHeight * 0.3,
+                      child: const Icon(
+                        Icons.qr_code_rounded,
+                        size: 68,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: screenHeight * 0.3,
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                          alignment: Alignment.center,
+                          side: const BorderSide(),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(4))),
+                      onPressed: () => Modular.to.pushNamed(
+                        '/qr-code/',
+                      ),
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.camera_alt_outlined),
+                          SizedBox(
+                            width: 8,
+                          ),
+                          Text(
+                            'Scan QRCode',
+                            style: TextStyle(color: Colors.blue),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text('Recentes:'),
+                      TextButton(
+                          onPressed: () => {},
+                          child: const Text(
+                            'Todos',
+                            style: TextStyle(color: Colors.blue),
+                          ))
+                    ],
+                  ),
+                  ListView.builder(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: 3,
+                      itemBuilder: (BuildContext context, int index) => Card(
+                            child: ListTile(
+                              visualDensity:
+                                  VisualDensity.adaptivePlatformDensity,
+                              leading: CircleAvatar(
+                                  backgroundColor: Colors.amber,
+                                  child: Text(index.toString())),
+                              title: const Text('Titulo do video'),
+                              subtitle: const Text('Author'),
+                              trailing: const Text('15 de mai, 2024'),
+                            ),
+                          ))
+                ],
               ),
-            ),
-          if (!isReadyScan)
-            Center(
-              child: Container(
-                color: Colors.grey,
-                width: screenWidth * 0.6,
-                height: screenHeight * 0.3,
-                child: const Icon(
-                  Icons.qr_code_rounded,
-                  size: 68,
-                ),
-              ),
-            ),
-          SizedBox(
-            width: screenWidth * 0.6,
-            child: Text(
-              'LEIA O QRCODE',
-              style: GoogleFonts.robotoCondensed(
-                textStyle: const TextStyle(fontSize: 28),
-                fontWeight: FontWeight.bold,
-                color: Colors.grey,
-              ),
-              textAlign: TextAlign.center,
             ),
           ),
-        ],
-      ),
-      // floatingActionButton: SizedBox(
-      //   height: 60,
-      //   width: 60,
-      //   child: FloatingActionButton(
-      //     elevation: 8,
-      //     backgroundColor: Colors.white,
-      //     shape: const CircleBorder(),
-      //     onPressed: () => {
-      //       setState(() => isReadyScan = !isReadyScan)
-      //       // Navigator.of(context).pushNamed('/video-player')
-      //     },
-      //     tooltip: 'QRCode',
-      //     child: const Icon(
-      //       Icons.qr_code_scanner_rounded,
-      //       size: 35,
-      //     ),
-      //   ),
-      // ),
-      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        );
+      }),
     );
-  }
-
-  Widget _buildQrView(BuildContext context) {
-    var scanArea = (MediaQuery.of(context).size.width < 600 ||
-            MediaQuery.of(context).size.height < 400)
-        ? 150.0
-        : 300.0;
-
-    return QRView(
-      key: qrKey,
-      onQRViewCreated: onQRView,
-      overlay: QrScannerOverlayShape(
-        borderColor: Colors.red,
-        borderRadius: 10,
-        borderLength: 30,
-        borderWidth: 10,
-        cutOutSize: scanArea,
-      ),
-      onPermissionSet: (controller, permission) =>
-          _onPermissionSet(context, controller, permission),
-    );
-  }
-
-  void _onPermissionSet(
-      BuildContext context, QRViewController controller, bool permission) {
-    if (!permission) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Sem permissão para camera')),
-      );
-    }
   }
 }
