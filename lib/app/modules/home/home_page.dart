@@ -86,7 +86,7 @@ class HomePageState extends State<HomePage> {
                     children: [
                       const Text('Recentes:'),
                       TextButton(
-                          onPressed: () => {},
+                          onPressed: () => Modular.to.pushNamed('/historic/'),
                           child: const Text(
                             'Todos',
                             style: TextStyle(color: Colors.blue),

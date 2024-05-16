@@ -51,14 +51,13 @@ class QRCodePageState extends State<QRCodePage> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () => {},
+          onPressed: () => Modular.to.pop(),
           icon: const Icon(Icons.arrow_back_ios_outlined),
         ),
         title: const Text(
           'Voltar',
           style: TextStyle(fontSize: 18),
         ),
-        leadingWidth: 24,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
