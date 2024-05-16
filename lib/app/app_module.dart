@@ -20,6 +20,6 @@ class AppModule extends Module {
     r.module('/', module: HomeModule());
     r.module('/qr-code', module: QRCodeModule());
     r.module('/video-player', module: VideioPlayerModule());
-    r.module('/history', module: HistoricModule());
+    r.module('/historic', module: HistoricModule());
   }
 }
