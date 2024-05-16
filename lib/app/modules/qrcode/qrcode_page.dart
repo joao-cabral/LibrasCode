@@ -1,48 +1,45 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:librascode/app/modules/scan/home/home_controller.dart';
+import 'package:librascode/app/modules/core/database/sqlite_connection_factory.dart';
+import 'package:librascode/app/modules/home/home_controller.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
-import '../../../core/components/bottom_app_bar_component.dart';
-
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class QRCodePage extends StatefulWidget {
+  const QRCodePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<QRCodePage> createState() => QRCodePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class QRCodePageState extends State<QRCodePage> {
   final homeController = HomeController();
+  final sqliteConnection = Modular.get<SqliteConnectionFactory>();
 
   QRViewController? controller;
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
   bool isReadyScan = false;
 
-  void onQRView(QRViewController controller) {
-    controller.scannedDataStream.listen((data) {
-      if (data.code != null && data.code!.contains('://')) {
-        homeController.result = data.code;
-        Navigator.of(context).pushNamed('/video-player');
-      }
-    });
+  //Returns only videoID
+  String handleURL(String value) {
+    return value.split('=')[1];
   }
 
-  //develop
-  @override
-  void reassemble() {
-    super.reassemble();
-    if (Platform.isAndroid) {
-      controller!.pauseCamera();
-    }
-    controller!.resumeCamera();
+  void onQRView(QRViewController controller) {
+    controller.scannedDataStream.firstWhere((data) {
+      if (data.code != null && data.code!.contains('youtube')) {
+        Modular.to.pushNamed(
+          '/video-player/?videoId=${handleURL(data.code!)}',
+        );
+        return true;
+      }
+      return false;
+    });
   }
 
   @override
   void dispose() {
-    controller?.dispose();
+    controller?.stopCamera();
     super.dispose();
   }
 
@@ -53,20 +50,32 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       appBar: AppBar(
-          centerTitle: true,
-          title: Text(
-            'LibrasCode',
-            style: GoogleFonts.robotoCondensed(
-              textStyle: const TextStyle(fontSize: 24),
-              fontWeight: FontWeight.bold,
-              color: Colors.grey,
-            ),
-            textAlign: TextAlign.center,
-          )),
+        leading: IconButton(
+          onPressed: () => {},
+          icon: const Icon(Icons.arrow_back_ios_outlined),
+        ),
+        title: const Text(
+          'Voltar',
+          style: TextStyle(fontSize: 18),
+        ),
+        leadingWidth: 24,
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
+          SizedBox(
+            width: screenWidth * 0.6,
+            child: Text(
+              'LEIA O QRCODE',
+              style: GoogleFonts.robotoCondensed(
+                textStyle: const TextStyle(fontSize: 28),
+                fontWeight: FontWeight.bold,
+                color: Colors.grey,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
           if (isReadyScan)
             Center(
               child: SizedBox(
@@ -87,18 +96,6 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-          SizedBox(
-            width: screenWidth * 0.6,
-            child: Text(
-              'LEIA O QRCODE DA OBRA',
-              style: GoogleFonts.robotoCondensed(
-                textStyle: const TextStyle(fontSize: 28),
-                fontWeight: FontWeight.bold,
-                color: Colors.grey,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ),
         ],
       ),
       floatingActionButton: SizedBox(
@@ -111,13 +108,12 @@ class _HomePageState extends State<HomePage> {
           onPressed: () => {setState(() => isReadyScan = !isReadyScan)},
           tooltip: 'QRCode',
           child: const Icon(
-            Icons.qr_code_scanner_rounded,
+            Icons.flashlight_on_sharp,
             size: 35,
           ),
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: const BottomAppBarComponent(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 

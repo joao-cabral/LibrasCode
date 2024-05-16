@@ -1,12 +1,11 @@
-import 'package:librascode/app/core/database/sqlite_migration_factory.dart';
+import 'package:librascode/app/modules/core/database/sqlite_migration_factory.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:synchronized/synchronized.dart';
 
 class SqliteConnectionFactory {
-  static const _VERSION = 1;
-  static const _DATABASE_NAME = 'LIBRASCODE_HISTORY_PROVIDER';
-
+  static const _version = 1;
+  static const _databaseName = 'LIBRASCODE_DB';
   static SqliteConnectionFactory? _instance;
 
   Database? _db;
@@ -16,21 +15,24 @@ class SqliteConnectionFactory {
   SqliteConnectionFactory._();
 
   factory SqliteConnectionFactory() {
-    return _instance ??= SqliteConnectionFactory._();
+    _instance ??= SqliteConnectionFactory._();
+    return _instance!;
   }
 
   Future<Database> openConnection() async {
-    var databasePath = await getDatabasesPath();
-    var databasePathFinal = join(databasePath, _DATABASE_NAME);
-
     if (_db == null) {
       await _lock.synchronized(() async {
-        _db ??= await openDatabase(databasePathFinal,
-            version: _VERSION,
-            onCreate: _onCreate,
-            onConfigure: _onConfigure,
-            onUpgrade: _onUpgrade,
-            onDowngrade: _onDowngrade);
+        if (_db == null) {
+          final databasePath = await getDatabasesPath();
+          final pathDatabase = join(databasePath, _databaseName);
+
+          _db = await openDatabase(pathDatabase,
+              version: _version,
+              onCreate: _onCreate,
+              onConfigure: _onConfigure,
+              onUpgrade: _onUpgrade,
+              onDowngrade: _onDowngrade);
+        }
       });
     }
     return _db!;

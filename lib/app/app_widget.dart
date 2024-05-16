@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:librascode/app/core/database/sqlite_adm_connection.dart';
-import 'package:librascode/app/modules/history/history_module.dart';
-import 'package:librascode/app/modules/scan/home/home_page.dart';
-import 'package:librascode/app/modules/scan/scan_module.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:librascode/app/modules/core/database/sqlite_adm_connection.dart';
 
 class AppWidget extends StatefulWidget {
   const AppWidget({super.key});
@@ -28,11 +26,10 @@ class _AppWidgetState extends State<AppWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'LibrasCode',
-      routes: {...ScanModule().routers, ...HistoryModule().routers},
-      home: const HomePage(),
+      routerConfig: Modular.routerConfig,
     );
   }
 }

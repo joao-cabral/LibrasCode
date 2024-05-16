@@ -1,22 +1,25 @@
-import 'package:flutter/material.dart';
-import 'package:librascode/app/core/database/sqlite_connection_factory.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:librascode/app/modules/core/core_module.dart';
+import 'package:librascode/app/modules/qrcode/qrcode_module.dart';
 
-import 'app_widget.dart';
+import 'modules/historic/historic_module.dart';
+import 'modules/home/home_module.dart';
+import 'modules/video_player/video_player_module.dart';
 
-class AppModule extends StatelessWidget {
-  const AppModule({super.key});
+class AppModule extends Module {
+  @override
+  List<Module> get imports => [
+        CoreModule(),
+      ];
 
   @override
-  Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        Provider(
-          create: (_) => SqliteConnectionFactory(),
-          lazy: false,
-        )
-      ],
-      child: const AppWidget(),
-    );
+  void binds(i) {}
+
+  @override
+  void routes(r) {
+    r.module('/', module: HomeModule());
+    r.module('/qr-code', module: QRCodeModule());
+    r.module('/video-player', module: VideioPlayerModule());
+    r.module('/history', module: HistoricModule());
   }
 }
