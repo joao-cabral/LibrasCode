@@ -17,6 +17,11 @@ class HistoricModule extends Module {
 
   @override
   void routes(r) {
-    r.child('/', child: (_) => const HistoricPage());
+    r.child(
+      '/',
+      child: (_) => HistoricPage(
+        controller: Modular.get<HistoricController>(),
+      ),
+    );
   }
 }
