@@ -26,7 +26,7 @@ class HistoricRepositoryImpl implements HistoricRepository {
   Future<List<HistoricModel>> getAll() async {
     final sqlConnection = await _sqliteConnectionFactory.openConnection();
     final result = await sqlConnection.rawQuery('select * from historic');
-    print('Entrou no getALl');
+
     return result
         .map<HistoricModel>((historic) => HistoricModel.fromMap(historic))
         .toList();
