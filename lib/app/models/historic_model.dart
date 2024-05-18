@@ -6,13 +6,13 @@ class HistoricModel {
   String videoId;
   String title;
   String author;
-  DateTime? watchDate;
+  DateTime watchDate;
   HistoricModel({
     this.id,
     required this.videoId,
     required this.title,
     required this.author,
-    this.watchDate,
+    required this.watchDate,
   });
 
   Map<String, dynamic> toMap() {
@@ -21,7 +21,7 @@ class HistoricModel {
       'videoId': videoId,
       'title': title,
       'author': author,
-      'watchDate': watchDate?.millisecondsSinceEpoch,
+      'watchDate': watchDate.millisecondsSinceEpoch,
     };
   }
 

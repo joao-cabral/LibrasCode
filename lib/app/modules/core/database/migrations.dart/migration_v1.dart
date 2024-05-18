@@ -10,7 +10,7 @@ class MigrationV1 implements Migration {
         videoId text not null,
         title TEXT,
         author TEXT,
-        watchDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        watchDate DATETIME
       )
 ''');
   }

@@ -11,10 +11,10 @@ class HistoricServiceImpl implements HistoricService {
   @override
   Future<HistoricModel> save(HistoricModel historicModel) async {
     final historicToSave = HistoricModel(
-      videoId: historicModel.videoId,
-      title: historicModel.title,
-      author: historicModel.author,
-    );
+        videoId: historicModel.videoId,
+        title: historicModel.title,
+        author: historicModel.author,
+        watchDate: historicModel.watchDate);
 
     var historicId = await _historicRepository.save(historicToSave);
     return historicToSave.copyWith(id: historicId);

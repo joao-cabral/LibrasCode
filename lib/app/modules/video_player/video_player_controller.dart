@@ -29,10 +29,13 @@ class VideoPlayerController {
   }
 
   Future<void> saveVideo(YoutubeMetaData metadata) async {
-    await _historicService.save(HistoricModel(
-      videoId: metadata.videoId,
-      author: metadata.author,
-      title: metadata.title,
-    ));
+    await _historicService.save(
+      HistoricModel(
+        videoId: metadata.videoId,
+        author: metadata.author,
+        title: metadata.title,
+        watchDate: DateTime.now(),
+      ),
+    );
   }
 }
