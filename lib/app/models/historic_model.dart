@@ -1,18 +1,18 @@
 import 'dart:convert';
 
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-class HistoryModel {
+class HistoricModel {
   int? id;
   String videoId;
   String title;
   String author;
-  DateTime? watchDate;
-  HistoryModel({
+  DateTime watchDate;
+  HistoricModel({
     this.id,
     required this.videoId,
     required this.title,
     required this.author,
-    this.watchDate,
+    required this.watchDate,
   });
 
   Map<String, dynamic> toMap() {
@@ -21,12 +21,12 @@ class HistoryModel {
       'videoId': videoId,
       'title': title,
       'author': author,
-      'watchDate': watchDate?.millisecondsSinceEpoch,
+      'watchDate': watchDate.millisecondsSinceEpoch,
     };
   }
 
-  factory HistoryModel.fromMap(Map<String, dynamic> map) {
-    return HistoryModel(
+  factory HistoricModel.fromMap(Map<String, dynamic> map) {
+    return HistoricModel(
       id: map['id'] != null ? map['id'] as int : null,
       videoId: map['videoId'] as String,
       title: map['title'] as String,
@@ -37,17 +37,17 @@ class HistoryModel {
 
   String toJson() => json.encode(toMap());
 
-  factory HistoryModel.fromJson(String source) =>
-      HistoryModel.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory HistoricModel.fromJson(String source) =>
+      HistoricModel.fromMap(json.decode(source) as Map<String, dynamic>);
 
-  HistoryModel copyWith({
+  HistoricModel copyWith({
     int? id,
     String? videoId,
     String? title,
     String? author,
     DateTime? watchDate,
   }) {
-    return HistoryModel(
+    return HistoricModel(
       id: id ?? this.id,
       videoId: videoId ?? this.videoId,
       title: title ?? this.title,

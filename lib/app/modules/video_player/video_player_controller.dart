@@ -1,13 +1,13 @@
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
-import '../../models/history_model.dart';
-import '../../services/history/history_service.dart';
+import '../../models/historic_model.dart';
+import '../../services/historic/historic_service.dart';
 
 class VideoPlayerController {
-  final HistoryService _historyService;
+  final HistoricService _historicService;
 
-  VideoPlayerController({required HistoryService historyService})
-      : _historyService = historyService;
+  VideoPlayerController({required HistoricService historicService})
+      : _historicService = historicService;
 
   bool isPop = false;
 
@@ -29,10 +29,13 @@ class VideoPlayerController {
   }
 
   Future<void> saveVideo(YoutubeMetaData metadata) async {
-    await _historyService.save(HistoryModel(
-      videoId: metadata.videoId,
-      author: metadata.author,
-      title: metadata.title,
-    ));
+    await _historicService.save(
+      HistoricModel(
+        videoId: metadata.videoId,
+        author: metadata.author,
+        title: metadata.title,
+        watchDate: DateTime.now(),
+      ),
+    );
   }
 }
