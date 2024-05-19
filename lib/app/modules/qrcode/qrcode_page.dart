@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:librascode/app/modules/core/database/sqlite_connection_factory.dart';
-import 'package:librascode/app/modules/home/home_controller.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
+
+import 'qrcode_controller.dart';
 
 class QRCodePage extends StatefulWidget {
   const QRCodePage({super.key});
@@ -13,7 +14,7 @@ class QRCodePage extends StatefulWidget {
 }
 
 class QRCodePageState extends State<QRCodePage> {
-  final homeController = HomeController();
+  final homeController = QRCodeController();
   final sqliteConnection = Modular.get<SqliteConnectionFactory>();
 
   QRViewController? controller;
