@@ -19,7 +19,7 @@ class QRCodeComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: screenHeight * 0.5,
+      height: screenHeight * 0.6,
       width: screenWidth * 0.7,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
