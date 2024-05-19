@@ -14,8 +14,12 @@ class HistoricController {
   ValueNotifier<bool> loading$ = ValueNotifier(false);
 
   Future<void> getAll() async {
-    loading$.value = true;
-    historic$.value = await _historicService.getAll();
-    loading$.value = false;
+    try {
+      loading$.value = true;
+      historic$.value = await _historicService.getAll();
+      loading$.value = false;
+    } catch (error) {
+      print(error);
+    }
   }
 }
