@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
+import 'package:librascode/app/modules/home/component/qrcode_widget.dart';
 
 import 'home_controller.dart';
 
@@ -13,13 +15,24 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
-  // final sqliteConnection = Modular.get<SqliteConnectionFactory>();
+  DateFormat dateFormat = DateFormat('dd MMMM, yyyy', 'pt_BR');
+
+  @override
+  void initState() {
+    widget.controller.getAll();
+    widget.controller.historic.addListener(() {
+      setState(() {});
+    });
+    widget.controller.loading.addListener(() {
+      setState(() {});
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
-
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -37,78 +50,63 @@ class HomePageState extends State<HomePage> {
         return SingleChildScrollView(
           child: ConstrainedBox(
             constraints: BoxConstraints(
-                minHeight: constrains.maxHeight, minWidth: constrains.maxWidth),
+              minHeight: constrains.maxHeight,
+              minWidth: constrains.maxWidth,
+            ),
             child: Container(
               margin: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Center(
-                    child: Container(
-                      color: Colors.grey,
-                      width: screenWidth * 0.6,
-                      height: screenHeight * 0.3,
-                      child: const Icon(
-                        Icons.qr_code_rounded,
-                        size: 68,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: screenHeight * 0.3,
-                    child: TextButton(
-                      style: TextButton.styleFrom(
-                          alignment: Alignment.center,
-                          side: const BorderSide(),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(4))),
-                      onPressed: () => Modular.to.pushNamed(
-                        '/qr-code/',
-                      ),
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.camera_alt_outlined),
-                          SizedBox(
-                            width: 8,
-                          ),
-                          Text(
-                            'Scan QRCode',
-                            style: TextStyle(color: Colors.blue),
-                          ),
-                        ],
-                      ),
-                    ),
+                  QRCodeComponent(
+                    screenHeight: screenHeight,
+                    screenWidth: screenWidth,
+                    controller: widget.controller,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text('Recentes:'),
                       TextButton(
-                          onPressed: () => Modular.to.pushNamed('/historic/'),
+                          onPressed: () => Modular.to
+                              .pushNamed('/historic/')
+                              .then((value) => widget.controller.getAll()),
                           child: const Text(
                             'Todos',
                             style: TextStyle(color: Colors.blue),
                           ))
                     ],
                   ),
-                  ListView.builder(
+                  if (widget.controller.loading.value)
+                    const Center(
+                      child: CircularProgressIndicator(),
+                    ),
+                  if (widget.controller.historic.value.isNotEmpty)
+                    ListView.builder(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
-                      itemCount: 3,
+                      itemCount: widget.controller.historic.value.length < 5
+                          ? widget.controller.historic.value.length
+                          : 5,
                       itemBuilder: (BuildContext context, int index) => Card(
-                            child: ListTile(
-                              visualDensity:
-                                  VisualDensity.adaptivePlatformDensity,
-                              leading: CircleAvatar(
-                                  backgroundColor: Colors.amber,
-                                  child: Text(index.toString())),
-                              title: const Text('Titulo do video'),
-                              subtitle: const Text('Author'),
-                              trailing: const Text('15 de mai, 2024'),
-                            ),
-                          ))
+                        child: ListTile(
+                          visualDensity: VisualDensity.adaptivePlatformDensity,
+                          leading: CircleAvatar(
+                              backgroundColor: Colors.amber,
+                              child: Text(widget
+                                  .controller.historic.value[index].author[0])),
+                          title: Text(
+                              widget.controller.historic.value[index].title),
+                          subtitle: Text(
+                              '${widget.controller.historic.value[index].author}\n${dateFormat.format(widget.controller.historic.value[index].watchDate)}'),
+                        ),
+                      ),
+                    ),
+                  if (widget.controller.historic.value.isEmpty)
+                    const Center(
+                      child: Text('Sem histórico'),
+                    )
                 ],
               ),
             ),
