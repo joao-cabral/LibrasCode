@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:librascode/app/modules/core/factories/dialog/dialog_actions.dart';
-import 'package:librascode/app/modules/core/factories/dialog/dialog_factory.dart';
 import 'package:librascode/app/modules/video_player/video_player_controller.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
@@ -32,26 +30,6 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
     });
 
     super.initState();
-  }
-
-  _showDialog() {
-    DialogFactory.showAlertDialog(
-        title: const Text('Tem certeza?'),
-        content: const Text('O vídeo ainda não finalizou'),
-        actions: [
-          DialogActions(
-            onPressed: () {
-              Modular.to.pop();
-            },
-            child: const Text('NÃO'),
-          ),
-          DialogActions(
-            onPressed: () {
-              Modular.to.popUntil(ModalRoute.withName('/'));
-            },
-            child: const Text('SIM'),
-          ),
-        ]);
   }
 
   Future<bool?> _showBackDialog() {
@@ -117,9 +95,6 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
           aspectRatio: 16 / 9,
           controller: _playerController,
           builder: (context, player) {
-            //função que inicia o video no fullScreen
-            // _playerController.enterFullScreen();
-            _playerController.listen((event) => event.fullScreenOption);
             return Column(
               children: [
                 player,
