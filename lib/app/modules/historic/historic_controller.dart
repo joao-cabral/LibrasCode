@@ -9,15 +9,15 @@ class HistoricController {
   HistoricController({required HistoricService historicService})
       : _historicService = historicService;
 
-  ValueNotifier<List<HistoricModel>> historic$ = ValueNotifier([]);
+  ValueNotifier<List<HistoricModel>> historic = ValueNotifier([]);
 
-  ValueNotifier<bool> loading$ = ValueNotifier(false);
+  ValueNotifier<bool> loading = ValueNotifier(false);
 
   Future<void> getAll() async {
     try {
-      loading$.value = true;
-      historic$.value = await _historicService.getAll();
-      loading$.value = false;
+      loading.value = true;
+      historic.value = await _historicService.getAll();
+      loading.value = false;
     } catch (error) {
       print(error);
     }
