@@ -41,19 +41,57 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
         actions: [
           DialogActions(
             onPressed: () {
-              // controller.popScope(false);
               Modular.to.pop();
             },
             child: const Text('NÃO'),
           ),
           DialogActions(
             onPressed: () {
-              // controller.popScope(true);
-              Modular.to.pop();
+              Modular.to.popUntil(ModalRoute.withName('/'));
             },
             child: const Text('SIM'),
           ),
         ]);
+  }
+
+  Future<bool?> _showBackDialog() {
+    return showDialog<bool>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Tem certeza?'),
+          content: const Text(
+            'Você realmente quer sair da página?',
+          ),
+          actions: <Widget>[
+            TextButton(
+              style: TextButton.styleFrom(
+                textStyle: Theme.of(context).textTheme.labelLarge,
+              ),
+              child: const Text(
+                'Continuar',
+                style: TextStyle(color: Colors.blue),
+              ),
+              onPressed: () {
+                Navigator.pop(context, false);
+              },
+            ),
+            TextButton(
+              style: TextButton.styleFrom(
+                textStyle: Theme.of(context).textTheme.labelLarge,
+              ),
+              child: const Text(
+                'Sair',
+                style: TextStyle(color: Colors.blue),
+              ),
+              onPressed: () {
+                Modular.to.popUntil(ModalRoute.withName('/'));
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
@@ -66,12 +104,12 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: PopScope(
-      canPop: true,
+      canPop: false,
       onPopInvoked: (bool didPop) {
         if (didPop) {
           return;
         }
-        _showDialog();
+        _showBackDialog();
       },
       child: Scaffold(
         body: YoutubePlayerScaffold(

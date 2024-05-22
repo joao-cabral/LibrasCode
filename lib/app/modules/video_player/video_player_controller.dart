@@ -9,12 +9,6 @@ class VideoPlayerController {
   VideoPlayerController({required HistoricService historicService})
       : _historicService = historicService;
 
-  bool isPop = false;
-
-  void popScope(bool value) {
-    isPop = value;
-  }
-
   YoutubePlayerController configYoutubePLayer(String videoId) {
     return YoutubePlayerController.fromVideoId(
       videoId: videoId,
