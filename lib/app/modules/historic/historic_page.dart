@@ -17,11 +17,11 @@ class _HistoricPageState extends State<HistoricPage> {
   @override
   void initState() {
     widget.controller.getAll();
-    widget.controller.historic$.addListener(() {
+    widget.controller.historic.addListener(() {
       setState(() {});
     });
 
-    widget.controller.loading$.addListener(() {
+    widget.controller.loading.addListener(() {
       setState(() {});
     });
     super.initState();
@@ -40,26 +40,29 @@ class _HistoricPageState extends State<HistoricPage> {
           style: TextStyle(fontSize: 18),
         ),
       ),
-      body: widget.controller.loading$.value
+      body: widget.controller.loading.value
           ? const Center(
               child: CircularProgressIndicator(),
             )
-          : widget.controller.historic$.value.isNotEmpty
+          : widget.controller.historic.value.isNotEmpty
               ? Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12.0),
                   child: ListView.builder(
-                    itemCount: widget.controller.historic$.value.length,
+                    itemCount: widget.controller.historic.value.length,
                     itemBuilder: (BuildContext context, int index) => Card(
                       child: ListTile(
+                        onTap: () => Modular.to.pushNamed(
+                          '/video-player/?videoId=${widget.controller.historic.value[index].videoId}',
+                        ),
                         visualDensity: VisualDensity.adaptivePlatformDensity,
                         leading: CircleAvatar(
                             backgroundColor: Colors.amber,
                             child: Text(widget
-                                .controller.historic$.value[index].author[0])),
-                        title: Text(
-                            widget.controller.historic$.value[index].title),
+                                .controller.historic.value[index].author[0])),
+                        title:
+                            Text(widget.controller.historic.value[index].title),
                         subtitle: Text(
-                            '${widget.controller.historic$.value[index].author}\n${dateFormat.format(widget.controller.historic$.value[index].watchDate)}'),
+                            '${widget.controller.historic.value[index].author}\n${dateFormat.format(widget.controller.historic.value[index].watchDate)}'),
                       ),
                     ),
                   ),
