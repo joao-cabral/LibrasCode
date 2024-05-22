@@ -12,6 +12,16 @@ class HistoricRepositoryImpl implements HistoricRepository {
   @override
   Future<int> save(HistoricModel historic) async {
     final sqlConnection = await _sqliteConnectionFactory.openConnection();
+
+    // Verificar se já existe um vídeo com o mesmo videoId
+    final existingVideo = await sqlConnection.rawQuery(
+        'SELECT * FROM historic WHERE videoId = ?', [historic.videoId]);
+
+    if (existingVideo.isNotEmpty) {
+      // Se já existe um vídeo com o mesmo videoId, retornar sem inserir
+      return 0;
+    }
+
     return await sqlConnection
         .rawInsert('insert into historic values(?,?,?,?,?)', [
       null,
