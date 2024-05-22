@@ -91,6 +91,9 @@ class HomePageState extends State<HomePage> {
                           : 5,
                       itemBuilder: (BuildContext context, int index) => Card(
                         child: ListTile(
+                          onTap: () => Modular.to.pushNamed(
+                            '/video-player/?videoId=${widget.controller.historic.value[index].videoId}',
+                          ),
                           visualDensity: VisualDensity.adaptivePlatformDensity,
                           leading: CircleAvatar(
                               backgroundColor: Colors.amber,

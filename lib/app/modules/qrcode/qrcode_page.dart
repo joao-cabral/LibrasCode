@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:librascode/app/modules/core/database/sqlite_connection_factory.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 import 'qrcode_controller.dart';
@@ -15,7 +13,6 @@ class QRCodePage extends StatefulWidget {
 
 class QRCodePageState extends State<QRCodePage> {
   final homeController = QRCodeController();
-  final sqliteConnection = Modular.get<SqliteConnectionFactory>();
 
   QRViewController? controller;
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
@@ -46,9 +43,6 @@ class QRCodePageState extends State<QRCodePage> {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
-
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -64,38 +58,9 @@ class QRCodePageState extends State<QRCodePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          SizedBox(
-            width: screenWidth * 0.6,
-            child: Text(
-              'LEIA O QRCODE',
-              style: GoogleFonts.robotoCondensed(
-                textStyle: const TextStyle(fontSize: 28),
-                fontWeight: FontWeight.bold,
-                color: Colors.grey,
-              ),
-              textAlign: TextAlign.center,
-            ),
+          Expanded(
+            child: _buildQrView(context),
           ),
-          if (isReadyScan)
-            Center(
-              child: SizedBox(
-                width: screenWidth * 0.6,
-                height: screenHeight * 0.3,
-                child: _buildQrView(context),
-              ),
-            ),
-          if (!isReadyScan)
-            Center(
-              child: Container(
-                color: Colors.grey,
-                width: screenWidth * 0.6,
-                height: screenHeight * 0.3,
-                child: const Icon(
-                  Icons.qr_code_rounded,
-                  size: 68,
-                ),
-              ),
-            ),
         ],
       ),
       floatingActionButton: SizedBox(
