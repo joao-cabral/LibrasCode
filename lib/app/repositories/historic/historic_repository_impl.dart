@@ -25,7 +25,8 @@ class HistoricRepositoryImpl implements HistoricRepository {
   @override
   Future<List<HistoricModel>> getAll() async {
     final sqlConnection = await _sqliteConnectionFactory.openConnection();
-    final result = await sqlConnection.rawQuery('select * from historic');
+    final result = await sqlConnection
+        .rawQuery('select * from historic order by watchDate desc');
 
     return result
         .map<HistoricModel>((historic) => HistoricModel.fromMap(historic))
