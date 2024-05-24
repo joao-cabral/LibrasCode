@@ -45,6 +45,12 @@ class HomePageState extends State<HomePage> {
           ),
           textAlign: TextAlign.center,
         ),
+        actions: [
+          IconButton(
+            onPressed: () => {},
+            icon: const Icon(Icons.more_vert_outlined),
+          ),
+        ],
       ),
       body: LayoutBuilder(builder: (context, constrains) {
         return SingleChildScrollView(
