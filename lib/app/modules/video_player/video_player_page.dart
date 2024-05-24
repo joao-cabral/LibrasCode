@@ -138,9 +138,12 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
                     children: [
                       const Text('Recentes:'),
                       TextButton(
-                        onPressed: () => Modular.to
-                            .pushNamed('/historic/')
-                            .then((value) => widget.controller.getAll()),
+                        onPressed: () {
+                          _playerController.pauseVideo();
+                          Modular.to
+                              .pushNamed('/historic/')
+                              .then((value) => widget.controller.getAll());
+                        },
                         child: const Text(
                           'Todos',
                           style: TextStyle(color: Colors.blue),
