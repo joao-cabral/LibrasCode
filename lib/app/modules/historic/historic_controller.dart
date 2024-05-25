@@ -1,23 +1,30 @@
-import 'package:flutter/material.dart';
+import 'package:mobx/mobx.dart';
 
 import '../../models/historic_model.dart';
 import '../../services/historic/historic_service.dart';
 
-class HistoricController {
+part 'historic_controller.g.dart';
+
+class HistoricController = HistoricControllerBase with _$HistoricController;
+
+abstract class HistoricControllerBase with Store {
   final HistoricService _historicService;
 
-  HistoricController({required HistoricService historicService})
+  HistoricControllerBase({required HistoricService historicService})
       : _historicService = historicService;
 
-  ValueNotifier<List<HistoricModel>> historic = ValueNotifier([]);
+  @readonly
+  List<HistoricModel> _historic = [];
 
-  ValueNotifier<bool> loading = ValueNotifier(false);
+  @observable
+  bool loading = false;
 
+  @action
   Future<void> getAll() async {
     try {
-      loading.value = true;
-      historic.value = await _historicService.getAll();
-      loading.value = false;
+      loading = true;
+      _historic = await _historicService.getAll();
+      loading = false;
     } catch (error) {
       print(error);
     }
