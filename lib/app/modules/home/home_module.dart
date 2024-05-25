@@ -1,8 +1,10 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:librascode/app/modules/core/core_module.dart';
-import 'package:librascode/app/modules/home/home_controller.dart';
 
+import '../core/core_module.dart';
+import 'home_controller.dart';
 import 'home_page.dart';
+import 'menu_page/about_page.dart';
+import 'menu_page/feedback_page.dart';
 
 class HomeModule extends Module {
   @override
@@ -22,6 +24,14 @@ class HomeModule extends Module {
       child: (_) => HomePage(
         controller: Modular.get<HomeController>(),
       ),
+    );
+    r.child(
+      '/about',
+      child: (_) => const AboutPage(),
+    );
+    r.child(
+      '/feedback',
+      child: (_) => const FeedbackPage(),
     );
   }
 }

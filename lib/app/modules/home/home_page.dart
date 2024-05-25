@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
-import 'package:librascode/app/modules/home/component/qrcode_widget.dart';
+import 'package:librascode/app/modules/home/widgets/menu_widget.dart';
+import 'package:librascode/app/modules/home/widgets/qrcode_widget.dart';
 
 import 'home_controller.dart';
 
@@ -20,12 +22,6 @@ class HomePageState extends State<HomePage> {
   @override
   void initState() {
     widget.controller.getAll();
-    widget.controller.historic.addListener(() {
-      setState(() {});
-    });
-    widget.controller.loading.addListener(() {
-      setState(() {});
-    });
     super.initState();
   }
 
@@ -34,7 +30,9 @@ class HomePageState extends State<HomePage> {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         centerTitle: true,
         title: Text(
           'LibrasCode',
@@ -45,11 +43,8 @@ class HomePageState extends State<HomePage> {
           ),
           textAlign: TextAlign.center,
         ),
-        actions: [
-          IconButton(
-            onPressed: () => {},
-            icon: const Icon(Icons.more_vert_outlined),
-          ),
+        actions: const [
+          MenuWidget(),
         ],
       ),
       body: LayoutBuilder(builder: (context, constrains) {
@@ -84,38 +79,43 @@ class HomePageState extends State<HomePage> {
                           ))
                     ],
                   ),
-                  if (widget.controller.loading.value)
-                    const Center(
-                      child: CircularProgressIndicator(),
-                    ),
-                  if (widget.controller.historic.value.isNotEmpty)
-                    ListView.builder(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: widget.controller.historic.value.length < 5
-                          ? widget.controller.historic.value.length
-                          : 5,
-                      itemBuilder: (BuildContext context, int index) => Card(
-                        child: ListTile(
-                          onTap: () => Modular.to.pushNamed(
-                            '/video-player/?videoId=${widget.controller.historic.value[index].videoId}',
+                  Observer(builder: (_) {
+                    if (widget.controller.loading) {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    }
+                    if (widget.controller.historic.isNotEmpty) {
+                      return ListView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: widget.controller.historic.length < 5
+                            ? widget.controller.historic.length
+                            : 5,
+                        itemBuilder: (BuildContext context, int index) => Card(
+                          child: ListTile(
+                            onTap: () => Modular.to.pushNamed(
+                              '/video-player/?videoId=${widget.controller.historic[index].videoId}',
+                            ),
+                            visualDensity:
+                                VisualDensity.adaptivePlatformDensity,
+                            leading: CircleAvatar(
+                                backgroundColor: Colors.amber,
+                                child: Text(widget
+                                    .controller.historic[index].author[0])),
+                            title:
+                                Text(widget.controller.historic[index].title),
+                            subtitle: Text(
+                                '${widget.controller.historic[index].author}\n${dateFormat.format(widget.controller.historic[index].watchDate)}'),
                           ),
-                          visualDensity: VisualDensity.adaptivePlatformDensity,
-                          leading: CircleAvatar(
-                              backgroundColor: Colors.amber,
-                              child: Text(widget
-                                  .controller.historic.value[index].author[0])),
-                          title: Text(
-                              widget.controller.historic.value[index].title),
-                          subtitle: Text(
-                              '${widget.controller.historic.value[index].author}\n${dateFormat.format(widget.controller.historic.value[index].watchDate)}'),
                         ),
-                      ),
-                    ),
-                  if (widget.controller.historic.value.isEmpty)
-                    const Center(
+                      );
+                    }
+
+                    return const Center(
                       child: Text('Sem histórico'),
-                    )
+                    );
+                  })
                 ],
               ),
             ),
