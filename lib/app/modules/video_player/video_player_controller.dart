@@ -1,19 +1,30 @@
-import 'package:flutter/material.dart';
+import 'package:mobx/mobx.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 import '../../models/historic_model.dart';
 import '../../services/historic/historic_service.dart';
 
-class VideoPlayerController extends ChangeNotifier {
+part 'video_player_controller.g.dart';
+
+class VideoPlayerController = VideoPlayerControllerBase
+    with _$VideoPlayerController;
+
+abstract class VideoPlayerControllerBase with Store {
   final HistoricService _historicService;
 
-  VideoPlayerController({required HistoricService historicService})
+  VideoPlayerControllerBase({required HistoricService historicService})
       : _historicService = historicService;
 
-  List<HistoricModel> historic = [];
+  @readonly
+  List<HistoricModel> _historic = [];
+
+  @observable
   bool loading = false;
+
+  @observable
   String videoTitle = '';
 
+  @action
   YoutubePlayerController configYoutubePLayer(String videoId) {
     return YoutubePlayerController.fromVideoId(
       videoId: videoId,
@@ -27,6 +38,7 @@ class VideoPlayerController extends ChangeNotifier {
     );
   }
 
+  @action
   Future<void> saveVideo(YoutubeMetaData metadata) async {
     await _historicService.save(
       HistoricModel(
@@ -38,19 +50,19 @@ class VideoPlayerController extends ChangeNotifier {
     );
   }
 
+  @action
   Future<void> getAll() async {
     loading = true;
     try {
-      historic = await _historicService.getAll();
+      _historic = await _historicService.getAll();
       loading = false;
     } catch (error) {
       print(error);
     }
-    notifyListeners();
   }
 
+  @action
   void getTitle(String title) {
     videoTitle = title;
-    notifyListeners();
   }
 }

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:librascode/app/modules/video_player/video_player_controller.dart';
-import 'package:provider/provider.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class VideoPlayerPage extends StatefulWidget {
@@ -42,7 +42,6 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
 
     _playerController.stream.listen((data) {
       if (data.metaData.title.isNotEmpty) {
-        // enter fullscreen when player is playing video
         widget.controller.getTitle(data.metaData.title);
       }
     });
@@ -118,10 +117,10 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
                 player,
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Consumer<VideoPlayerController>(
-                    builder: (context, controller, child) {
+                  child: Observer(
+                    builder: (_) {
                       return Text(
-                        controller.videoTitle,
+                        widget.controller.videoTitle,
                         style: GoogleFonts.robotoCondensed(
                           textStyle: const TextStyle(fontSize: 18),
                           fontWeight: FontWeight.bold,
@@ -152,15 +151,14 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
                     ],
                   ),
                 ),
-                Consumer<VideoPlayerController>(
-                    builder: (context, controller, child) {
-                  if (controller.loading) {
+                Observer(builder: (_) {
+                  if (widget.controller.loading) {
                     return const Center(
                       child: CircularProgressIndicator(),
                     );
                   }
 
-                  if (controller.historic.isNotEmpty) {
+                  if (widget.controller.historic.isNotEmpty) {
                     return Expanded(
                       child: Padding(
                         padding: const EdgeInsets.all(12.0),
