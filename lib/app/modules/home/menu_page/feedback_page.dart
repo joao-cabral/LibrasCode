@@ -5,8 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class FeedbackPage extends StatelessWidget {
   const FeedbackPage({Key? key}) : super(key: key);
-  static const iconInstagram = "assets/instagram.png";
-  static const iconTwitter = "assets/twitter.png";
+  static const iconInstagram = "assets/images/instagram.png";
 
   Future launchURL(Uri url) async {
     try {
@@ -22,7 +21,7 @@ class FeedbackPage extends StatelessWidget {
   Future<void> sendEmail(BuildContext context) async {
     final Email email = Email(
       body: '(Escreva aqui)',
-      subject: '[WTN]',
+      subject: '[LibrasCode]',
       recipients: ['joaocabral1232@gmail.com'],
       isHTML: false,
     );
@@ -46,10 +45,11 @@ class FeedbackPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
-          "Deixar Feedback",
+          "Feedback",
           style: GoogleFonts.spaceMono(
             fontSize: 18,
             fontWeight: FontWeight.w700,
@@ -67,29 +67,28 @@ class FeedbackPage extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 14.0, right: 50, top: 14.0),
+          const Padding(
+            padding: EdgeInsets.only(left: 14.0, right: 50, top: 14.0),
             child: Text(
-              "Adoraria saber como deixar o Adenilso melhor. Por favor, deixe um comentário na Google Play ou envie um email - Isso vai ser sensacional!",
-              style: GoogleFonts.spaceMono(
-                fontSize: 14,
+              "Adoraria saber como deixar o LibrasCode melhor. Por favor, deixe um comentário na Google Play ou envie um email - Isso vai ser sensacional!",
+              style: TextStyle(
                 fontWeight: FontWeight.w500,
                 color: Colors.black,
               ),
               textAlign: TextAlign.justify,
             ),
           ),
-          ListTile(
-            leading: const Icon(Icons.star, color: Colors.black),
+          const ListTile(
+            leading: Icon(Icons.star, color: Colors.black),
             title: Text(
               "Escreva um comentário e deixa sua avaliação",
-              style: GoogleFonts.spaceMono(
+              style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
                 color: Colors.black,
               ),
             ),
-            trailing: const Icon(
+            trailing: Icon(
               Icons.arrow_forward_ios,
               color: Colors.black,
               size: 18,
@@ -99,9 +98,9 @@ class FeedbackPage extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.email, color: Colors.black),
-            title: Text(
+            title: const Text(
               "Me contate por email",
-              style: GoogleFonts.spaceMono(
+              style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
                 color: Colors.black,
@@ -112,7 +111,7 @@ class FeedbackPage extends StatelessWidget {
               color: Colors.black,
               size: 18,
             ),
-            onTap: () => Navigator.pushNamed(context, 'improvements'),
+            onTap: () => {},
           ),
           ListTile(
             leading: const SizedBox(
@@ -122,9 +121,9 @@ class FeedbackPage extends StatelessWidget {
                 image: AssetImage(iconInstagram),
               ),
             ),
-            title: Text(
-              "Me siga no Instagram",
-              style: GoogleFonts.spaceMono(
+            title: const Text(
+              "Siga o LibrasCode",
+              style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
                 color: Colors.black,
