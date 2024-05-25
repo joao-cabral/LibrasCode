@@ -30,6 +30,7 @@ class MenuWidget extends StatelessWidget {
       itemBuilder: (context) => [
         const PopupMenuItem<_MenuOptions>(
           value: _MenuOptions.feedback,
+          enabled: false,
           child: Text('Feedback'),
         ),
         const PopupMenuItem<_MenuOptions>(
