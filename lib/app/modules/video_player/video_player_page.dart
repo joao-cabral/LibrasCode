@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 import 'package:librascode/app/modules/video_player/video_player_controller.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
@@ -15,18 +17,33 @@ class VideoPlayerPage extends StatefulWidget {
 
 class _VideoPlayerPageState extends State<VideoPlayerPage> {
   late YoutubePlayerController _playerController;
+  DateFormat dateFormat = DateFormat('dd MMMM, yyyy', 'pt_BR');
 
   @override
   void initState() {
     _playerController =
         widget.controller.configYoutubePLayer(widget.videoId ?? 'ZtMzB5CoekE');
+    widget.controller.getAll();
 
     _playerController.stream.firstWhere((data) {
       if (data.metaData.videoId.isNotEmpty) {
         widget.controller.saveVideo(data.metaData);
+
+        // enter fullscreen when player is playing video
+        if (data.playerState.code == 1) {
+          _playerController.enterFullScreen();
+          widget.controller.getTitle(data.metaData.title);
+        }
+
         return true;
       }
       return false;
+    });
+
+    _playerController.stream.listen((data) {
+      if (data.metaData.title.isNotEmpty) {
+        widget.controller.getTitle(data.metaData.title);
+      }
     });
 
     super.initState();
@@ -92,31 +109,93 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
       child: Scaffold(
         body: YoutubePlayerScaffold(
           backgroundColor: Colors.white,
-          aspectRatio: 16 / 9,
           controller: _playerController,
+          autoFullScreen: true,
           builder: (context, player) {
             return Column(
               children: [
                 player,
-                StreamBuilder(
-                  stream: _playerController.stream,
-                  builder: (context, snapshot) {
-                    if (!snapshot.hasData) {
-                      return const Text('Carregando...');
-                    }
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        snapshot.data?.metaData.title ?? 'N/A',
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Observer(
+                    builder: (_) {
+                      return Text(
+                        widget.controller.videoTitle,
                         style: GoogleFonts.robotoCondensed(
                           textStyle: const TextStyle(fontSize: 18),
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
                         ),
+                      );
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text('Recentes:'),
+                      TextButton(
+                        onPressed: () {
+                          _playerController.pauseVideo();
+                          Modular.to
+                              .pushNamed('/historic/')
+                              .then((value) => widget.controller.getAll());
+                        },
+                        child: const Text(
+                          'Todos',
+                          style: TextStyle(color: Colors.blue),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Observer(builder: (_) {
+                  if (widget.controller.loading) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+
+                  if (widget.controller.historic.isNotEmpty) {
+                    return Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: ListView.builder(
+                          itemCount: widget.controller.historic.length < 5
+                              ? widget.controller.historic.length
+                              : 5,
+                          itemBuilder: (BuildContext context, int index) =>
+                              Card(
+                            child: ListTile(
+                              onTap: () {
+                                _playerController.pauseVideo();
+                                _playerController.loadVideoById(
+                                    videoId: widget
+                                        .controller.historic[index].videoId);
+                              },
+                              visualDensity:
+                                  VisualDensity.adaptivePlatformDensity,
+                              leading: CircleAvatar(
+                                  backgroundColor: Colors.amber,
+                                  child: Text(widget
+                                      .controller.historic[index].author[0])),
+                              title:
+                                  Text(widget.controller.historic[index].title),
+                              subtitle: Text(
+                                  '${widget.controller.historic[index].author}\n${dateFormat.format(widget.controller.historic[index].watchDate)}'),
+                            ),
+                          ),
+                        ),
                       ),
                     );
-                  },
-                ),
+                  }
+
+                  return const Center(
+                    child: Text('Sem histórico'),
+                  );
+                })
               ],
             );
           },

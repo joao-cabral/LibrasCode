@@ -12,22 +12,20 @@ class QRCodePage extends StatefulWidget {
 }
 
 class QRCodePageState extends State<QRCodePage> {
-  final homeController = QRCodeController();
+  final controller = QRCodeController();
 
-  QRViewController? controller;
+  QRViewController? qrViewController;
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
   bool isReadyScan = false;
 
-  //Returns only videoID
-  String handleURL(String value) {
-    return value.split('=')[1];
-  }
+  //Get first qrcode scanned if contains youtube
+  void onQRView(QRViewController qrViewController) {
+    this.qrViewController = qrViewController;
 
-  void onQRView(QRViewController controller) {
-    controller.scannedDataStream.firstWhere((data) {
+    qrViewController.scannedDataStream.firstWhere((data) {
       if (data.code != null && data.code!.contains('youtube')) {
         Modular.to.pushNamed(
-          '/video-player/?videoId=${handleURL(data.code!)}',
+          '/video-player/?videoId=${controller.handleURL(data.code!)}',
         );
         return true;
       }
@@ -37,7 +35,7 @@ class QRCodePageState extends State<QRCodePage> {
 
   @override
   void dispose() {
-    controller?.stopCamera();
+    qrViewController?.stopCamera();
     super.dispose();
   }
 
@@ -70,7 +68,7 @@ class QRCodePageState extends State<QRCodePage> {
           elevation: 8,
           backgroundColor: Colors.white,
           shape: const CircleBorder(),
-          onPressed: () => {setState(() => isReadyScan = !isReadyScan)},
+          onPressed: () => {qrViewController?.toggleFlash()},
           tooltip: 'QRCode',
           child: const Icon(
             Icons.flashlight_on_sharp,

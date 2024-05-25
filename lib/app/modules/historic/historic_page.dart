@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:intl/intl.dart';
 import 'package:librascode/app/modules/historic/historic_controller.dart';
@@ -17,59 +18,56 @@ class _HistoricPageState extends State<HistoricPage> {
   @override
   void initState() {
     widget.controller.getAll();
-    widget.controller.historic.addListener(() {
-      setState(() {});
-    });
-
-    widget.controller.loading.addListener(() {
-      setState(() {});
-    });
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () => Modular.to.pop(),
-          icon: const Icon(Icons.arrow_back_ios_outlined),
+        appBar: AppBar(
+          leading: IconButton(
+            onPressed: () => Modular.to.pop(),
+            icon: const Icon(Icons.arrow_back_ios_outlined),
+          ),
+          title: const Text(
+            'Histórico',
+            style: TextStyle(fontSize: 18),
+          ),
         ),
-        title: const Text(
-          'Histórico',
-          style: TextStyle(fontSize: 18),
-        ),
-      ),
-      body: widget.controller.loading.value
-          ? const Center(
+        body: Observer(builder: (_) {
+          if (widget.controller.loading) {
+            return const Center(
               child: CircularProgressIndicator(),
-            )
-          : widget.controller.historic.value.isNotEmpty
-              ? Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                  child: ListView.builder(
-                    itemCount: widget.controller.historic.value.length,
-                    itemBuilder: (BuildContext context, int index) => Card(
-                      child: ListTile(
-                        onTap: () => Modular.to.pushNamed(
-                          '/video-player/?videoId=${widget.controller.historic.value[index].videoId}',
-                        ),
-                        visualDensity: VisualDensity.adaptivePlatformDensity,
-                        leading: CircleAvatar(
-                            backgroundColor: Colors.amber,
-                            child: Text(widget
-                                .controller.historic.value[index].author[0])),
-                        title:
-                            Text(widget.controller.historic.value[index].title),
-                        subtitle: Text(
-                            '${widget.controller.historic.value[index].author}\n${dateFormat.format(widget.controller.historic.value[index].watchDate)}'),
-                      ),
+            );
+          }
+
+          if (widget.controller.historic.isNotEmpty) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12.0),
+              child: ListView.builder(
+                itemCount: widget.controller.historic.length,
+                itemBuilder: (BuildContext context, int index) => Card(
+                  child: ListTile(
+                    onTap: () => Modular.to.pushNamed(
+                      '/video-player/?videoId=${widget.controller.historic[index].videoId}',
                     ),
+                    visualDensity: VisualDensity.adaptivePlatformDensity,
+                    leading: CircleAvatar(
+                        backgroundColor: Colors.amber,
+                        child:
+                            Text(widget.controller.historic[index].author[0])),
+                    title: Text(widget.controller.historic[index].title),
+                    subtitle: Text(
+                        '${widget.controller.historic[index].author}\n${dateFormat.format(widget.controller.historic[index].watchDate)}'),
                   ),
-                )
-              : const Center(
-                  child: Text('Sem histórico'),
                 ),
-    );
+              ),
+            );
+          }
+
+          return const Center(
+            child: Text('Sem histórico'),
+          );
+        }));
   }
 }
