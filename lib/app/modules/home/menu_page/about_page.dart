@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -20,6 +19,7 @@ class AboutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: IconButton(
@@ -29,9 +29,9 @@ class AboutPage extends StatelessWidget {
           ),
           onPressed: () => Navigator.pop(context),
         ),
-        title: Text(
+        title: const Text(
           "Sobre",
-          style: GoogleFonts.spaceMono(
+          style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w700,
             color: Colors.black,
@@ -44,26 +44,14 @@ class AboutPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 90,
                 child: Row(
                   children: [
-                    Text(
-                      "O",
-                      style: GoogleFonts.spaceMono(
-                        height: 1,
-                        fontSize: 80,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.black,
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 12,
-                    ),
                     Expanded(
                       child: Text(
-                        "Adenilso tem como objetivo mostrar o Trends Topics",
-                        style: GoogleFonts.spaceMono(
+                        "O que é o LibrasCode?",
+                        style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w700,
                           color: Colors.black,
@@ -76,48 +64,10 @@ class AboutPage extends StatelessWidget {
               RichText(
                 text: TextSpan(
                   children: [
-                    TextSpan(
-                      text: "das notícias mais pesquisadas do dia. ",
-                      style: GoogleFonts.spaceMono(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.black,
-                      ),
-                    ),
-                    TextSpan(
+                    const TextSpan(
                       text:
-                          " Você pode visitar o site oficial que serviu como inspiração: ",
-                      style: GoogleFonts.spaceMono(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.black,
-                      ),
-                    ),
-                    TextSpan(
-                      text: "Google Trends",
-                      style: GoogleFonts.spaceMono(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.black,
-                          decoration: TextDecoration.underline),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () async {
-                          await launchURL(Uri.parse(
-                              "https://trends.google.com/trends/hottrends/visualize"));
-                        },
-                    ),
-                    TextSpan(
-                      text: "\n\n",
-                      style: GoogleFonts.spaceMono(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.black,
-                      ),
-                    ),
-                    TextSpan(
-                      text:
-                          "No app você visualiza as notícias mais pesquisadas no Google e com a opção de filtrar por país. Fique por dentro das notícias :)",
-                      style: GoogleFonts.spaceMono(
+                          "A inclusão de deficientes auditivos em espaços culturais é um tema cada vez mais relevante. Muitas instituições comprometidas com a acessibilidade contam com intérpretes para atender pessoas com deficiência auditiva. No entanto, nem sempre é possível garantir a presença constante desses profissionais, o que pode reduzir a autonomia dos visitantes.",
+                      style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
                         color: Colors.black,
@@ -131,10 +81,10 @@ class AboutPage extends StatelessWidget {
                         color: Colors.black,
                       ),
                     ),
-                    TextSpan(
+                    const TextSpan(
                       text:
-                          '''Curiosidade sobre o nome "Adenilso": Inicialmente era para se chamar "Whats The News", porém a vontade de fazer um trocadilho é maior''',
-                      style: GoogleFonts.spaceMono(
+                          "O LIBRAS CODE foi desenvolvido para resolver essa questão, proporcionando uma solução prática e eficiente. Este aplicativo permite que visitantes surdos apreciem as obras em exposição de forma independente. Ao escanear um QR Code, o usuário pode assistir a vídeos de intérpretes traduzindo as informações das obras para a Língua Brasileira de Sinais (Libras). O LIBRAS CODE, busca oferecer uma experiência inclusiva e autônoma para todos os visitantes.",
+                      style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
                         color: Colors.black,
