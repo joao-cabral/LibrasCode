@@ -52,10 +52,6 @@ class _HistoricPageState extends State<HistoricPage> {
                       '/video-player/?videoId=${widget.controller.historic[index].videoId}',
                     ),
                     visualDensity: VisualDensity.adaptivePlatformDensity,
-                    leading: CircleAvatar(
-                        backgroundColor: Colors.amber,
-                        child:
-                            Text(widget.controller.historic[index].author[0])),
                     title: Text(widget.controller.historic[index].title),
                     subtitle: Text(
                         '${widget.controller.historic[index].author}\n${dateFormat.format(widget.controller.historic[index].watchDate)}'),
