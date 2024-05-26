@@ -99,10 +99,6 @@ class HomePageState extends State<HomePage> {
                             ),
                             visualDensity:
                                 VisualDensity.adaptivePlatformDensity,
-                            leading: CircleAvatar(
-                                backgroundColor: Colors.amber,
-                                child: Text(widget
-                                    .controller.historic[index].author[0])),
                             title:
                                 Text(widget.controller.historic[index].title),
                             subtitle: Text(
