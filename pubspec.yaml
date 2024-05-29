@@ -46,6 +46,7 @@ dependencies:
   flutter_mobx: ^2.2.1+1
   url_launcher: ^6.2.6
   flutter_email_sender: ^6.0.3
+  animated_text_kit: ^4.2.2
 
 dev_dependencies:
   flutter_test:
