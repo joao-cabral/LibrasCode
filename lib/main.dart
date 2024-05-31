@@ -7,6 +7,5 @@ import 'app/app_module.dart';
 
 void main() async {
   await initializeDateFormatting('pt_BR', null);
-
   runApp(ModularApp(module: AppModule(), child: const AppWidget()));
 }
