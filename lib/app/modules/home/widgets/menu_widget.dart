@@ -16,10 +16,10 @@ class MenuWidget extends StatelessWidget {
       onSelected: (value) async {
         switch (value) {
           case _MenuOptions.feedback:
-            Modular.to.pushNamed('/feedback');
+            Modular.to.pushNamed('feedback');
             break;
           case _MenuOptions.about:
-            Modular.to.pushNamed('/about');
+            Modular.to.pushNamed('about');
             break;
         }
       },
