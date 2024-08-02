@@ -73,6 +73,7 @@ class QRCodePageState extends State<QRCodePage> {
           child: const Icon(
             Icons.flashlight_on_sharp,
             size: 35,
+            color: Colors.blue,
           ),
         ),
       ),

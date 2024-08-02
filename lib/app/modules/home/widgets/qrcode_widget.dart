@@ -47,9 +47,11 @@ class QRCodeComponent extends StatelessWidget {
             child: TextButton(
               style: TextButton.styleFrom(
                   alignment: Alignment.center,
-                  side: const BorderSide(),
+                  side: const BorderSide(color: Colors.blue),
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(4))),
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  backgroundColor: Colors.blue),
               onPressed: () => Modular.to
                   .pushNamed(
                     '/qr-code/',
@@ -60,14 +62,14 @@ class QRCodeComponent extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.camera_alt_outlined,
-                    color: Colors.blue,
+                    color: Colors.white,
                   ),
                   SizedBox(
                     width: 8,
                   ),
                   Text(
                     'SCAN QRCODE',
-                    style: TextStyle(color: Colors.blue),
+                    style: TextStyle(color: Colors.white),
                   ),
                 ],
               ),

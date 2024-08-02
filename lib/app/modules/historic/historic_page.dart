@@ -25,6 +25,7 @@ class _HistoricPageState extends State<HistoricPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          surfaceTintColor: Colors.blue,
           leading: IconButton(
             onPressed: () => Modular.to.pop(),
             icon: const Icon(Icons.arrow_back_ios_outlined),

@@ -114,6 +114,19 @@ class _VideoPlayerPageState extends State<VideoPlayerPage> {
           builder: (context, player) {
             return Column(
               children: [
+                Container(
+                  color: Colors.white,
+                  height: 50,
+                  child: Row(
+                    children: [
+                      IconButton(
+                        onPressed: () => Modular.to.pop(),
+                        icon: const Icon(Icons.arrow_back_ios_outlined),
+                      ),
+                      const Text('Voltar')
+                    ],
+                  ),
+                ),
                 player,
                 Padding(
                   padding: const EdgeInsets.all(8.0),
