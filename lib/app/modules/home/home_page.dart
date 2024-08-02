@@ -33,13 +33,14 @@ class HomePageState extends State<HomePage> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
+        surfaceTintColor: Colors.blue,
         centerTitle: true,
         title: Text(
           'LibrasCode',
           style: GoogleFonts.robotoCondensed(
             textStyle: const TextStyle(fontSize: 24),
             fontWeight: FontWeight.bold,
-            color: Colors.grey,
+            color: Colors.black,
           ),
           textAlign: TextAlign.center,
         ),
