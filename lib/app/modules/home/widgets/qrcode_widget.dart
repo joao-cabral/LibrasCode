@@ -19,7 +19,6 @@ class QRCodeComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: screenHeight * 0.6,
       width: screenWidth * 0.7,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -33,7 +32,7 @@ class QRCodeComponent extends StatelessWidget {
                 ),
               ),
               CustomPaint(
-                size: Size(screenWidth * 0.7, screenHeight * 0.32),
+                size: Size(screenWidth * 0.7, 290),
                 painter: CustomBorderPainter(),
               ),
             ],
@@ -42,37 +41,35 @@ class QRCodeComponent extends StatelessWidget {
             height: 30,
           ),
           //Button to scan qrcode
-          SizedBox(
-            width: screenHeight * 0.7,
-            child: TextButton(
-              style: TextButton.styleFrom(
-                  alignment: Alignment.center,
-                  side: const BorderSide(color: Colors.blue),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  backgroundColor: Colors.blue),
-              onPressed: () => Modular.to
-                  .pushNamed(
-                    '/qr-code/',
-                  )
-                  .then((value) => controller.getAll()),
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.camera_alt_outlined,
-                    color: Colors.white,
-                  ),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  Text(
-                    'SCAN QRCODE',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ],
+          TextButton(
+            style: TextButton.styleFrom(
+              alignment: Alignment.center,
+              side: const BorderSide(color: Colors.blue),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(4),
               ),
+              backgroundColor: Colors.blue,
+            ),
+            onPressed: () => Modular.to
+                .pushNamed(
+                  '/qr-code/',
+                )
+                .then((value) => controller.getAll()),
+            child: const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.camera_alt_outlined,
+                  color: Colors.white,
+                ),
+                SizedBox(
+                  width: 8,
+                ),
+                Text(
+                  'SCAN QRCODE',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ],
             ),
           ),
         ],

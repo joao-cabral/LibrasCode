@@ -58,13 +58,15 @@ class HomePageState extends State<HomePage> {
             child: Container(
               margin: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  QRCodeComponent(
-                    screenHeight: screenHeight,
-                    screenWidth: screenWidth,
-                    controller: widget.controller,
+                  Padding(
+                    padding: const EdgeInsets.only(top: 30),
+                    child: QRCodeComponent(
+                      screenHeight: screenHeight,
+                      screenWidth: screenWidth,
+                      controller: widget.controller,
+                    ),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
