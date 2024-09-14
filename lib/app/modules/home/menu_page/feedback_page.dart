@@ -30,7 +30,7 @@ class FeedbackPage extends StatelessWidget {
 
     try {
       await FlutterEmailSender.send(email);
-      platformResponse = 'Obrigado por nos ajudar!';
+      platformResponse = 'Obrigado pelo feedback!';
     } catch (error) {
       platformResponse = error.toString();
     }
@@ -87,7 +87,7 @@ class FeedbackPage extends StatelessWidget {
               color: Colors.grey,
             ),
             title: Text(
-              "Escreva um comentário e deixa sua avaliação",
+              "Escreva um comentário e deixe sua avaliação",
               style: GoogleFonts.roboto(
                 letterSpacing: 0,
                 fontSize: 18,
@@ -110,7 +110,7 @@ class FeedbackPage extends StatelessWidget {
               color: Colors.black,
             ),
             title: Text(
-              "Me contate por email",
+              "Escrever email",
               style: GoogleFonts.roboto(
                 letterSpacing: 0,
                 fontSize: 18,
@@ -123,7 +123,7 @@ class FeedbackPage extends StatelessWidget {
               color: Colors.black,
               size: 18,
             ),
-            onTap: () => {},
+            onTap: () => sendEmail(context),
           ),
           ListTile(
             leading: const SizedBox(
@@ -134,7 +134,7 @@ class FeedbackPage extends StatelessWidget {
               ),
             ),
             title: Text(
-              "Siga o desenvolvedor do LibrasCode",
+              "Siga o projeto",
               style: GoogleFonts.roboto(
                 letterSpacing: 0,
                 fontSize: 18,
