@@ -30,7 +30,7 @@ class FeedbackPage extends StatelessWidget {
 
     try {
       await FlutterEmailSender.send(email);
-      platformResponse = 'Obrigado por nos ajudar!';
+      platformResponse = 'Obrigado pelo feedback!';
     } catch (error) {
       platformResponse = error.toString();
     }
@@ -67,40 +67,52 @@ class FeedbackPage extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Padding(
-            padding: EdgeInsets.only(left: 14.0, right: 50, top: 14.0),
+          Padding(
+            padding: const EdgeInsets.only(left: 14.0, right: 50, top: 14.0),
             child: Text(
-              "Adoraria saber como deixar o LibrasCode melhor. Por favor, deixe um comentário na Google Play ou envie um email - Isso vai ser sensacional!",
-              style: TextStyle(
-                fontWeight: FontWeight.w500,
+              "Adoraria saber como deixar o LibrasCode melhor. Por favor, deixe um comentário na Google Play ou envie um email - Isso vai ser de extrema importância!",
+              style: GoogleFonts.spaceMono(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
                 color: Colors.black,
               ),
               textAlign: TextAlign.justify,
             ),
           ),
-          const ListTile(
-            leading: Icon(Icons.star, color: Colors.black),
+          ListTile(
+            enabled: false,
+            leading: const Icon(
+              size: 30,
+              Icons.star_outline,
+              color: Colors.grey,
+            ),
             title: Text(
-              "Escreva um comentário e deixa sua avaliação",
-              style: TextStyle(
+              "Escreva um comentário e deixe sua avaliação",
+              style: GoogleFonts.roboto(
+                letterSpacing: 0,
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
-                color: Colors.black,
+                color: Colors.grey,
               ),
             ),
-            trailing: Icon(
+            trailing: const Icon(
               Icons.arrow_forward_ios,
-              color: Colors.black,
+              color: Colors.grey,
               size: 18,
             ),
             // onTap: () => LaunchReview.launch(
             //     androidAppId: 'br.com.wtn_project.adenilso'),
           ),
           ListTile(
-            leading: const Icon(Icons.email, color: Colors.black),
-            title: const Text(
-              "Me contate por email",
-              style: TextStyle(
+            leading: const Icon(
+              size: 30,
+              Icons.email_outlined,
+              color: Colors.black,
+            ),
+            title: Text(
+              "Escrever email",
+              style: GoogleFonts.roboto(
+                letterSpacing: 0,
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
                 color: Colors.black,
@@ -111,7 +123,7 @@ class FeedbackPage extends StatelessWidget {
               color: Colors.black,
               size: 18,
             ),
-            onTap: () => {},
+            onTap: () => sendEmail(context),
           ),
           ListTile(
             leading: const SizedBox(
@@ -121,9 +133,10 @@ class FeedbackPage extends StatelessWidget {
                 image: AssetImage(iconInstagram),
               ),
             ),
-            title: const Text(
-              "Siga o LibrasCode",
-              style: TextStyle(
+            title: Text(
+              "Siga o projeto",
+              style: GoogleFonts.roboto(
+                letterSpacing: 0,
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
                 color: Colors.black,

@@ -1,20 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class AboutPage extends StatelessWidget {
   const AboutPage({Key? key}) : super(key: key);
-
-  Future launchURL(Uri url) async {
-    try {
-      await launchUrl(
-        url,
-        mode: LaunchMode.externalApplication,
-      );
-    } catch (error) {
-      print(error);
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,15 +32,15 @@ class AboutPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(
-                height: 90,
+              const Padding(
+                padding: EdgeInsets.only(bottom: 30),
                 child: Row(
                   children: [
                     Expanded(
                       child: Text(
                         "O que é o LibrasCode?",
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 22,
                           fontWeight: FontWeight.w700,
                           color: Colors.black,
                         ),
