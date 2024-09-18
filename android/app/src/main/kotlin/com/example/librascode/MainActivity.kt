@@ -1,4 +1,4 @@
-package com.example.librascode
+package com.larbac.librascode
 
 import io.flutter.embedding.android.FlutterActivity
 

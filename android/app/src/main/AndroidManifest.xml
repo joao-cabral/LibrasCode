@@ -7,7 +7,7 @@
         </intent>
     </queries>
     <application
-        android:label="librascode"
+        android:label="LibrasCode"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity
