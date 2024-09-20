@@ -1,4 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:librascode/app/modules/home/menu_page/privacy_policy.dart';
 
 import '../core/core_module.dart';
 import 'home_controller.dart';
@@ -32,6 +33,10 @@ class HomeModule extends Module {
     r.child(
       '/feedback',
       child: (_) => const FeedbackPage(),
+    );
+    r.child(
+      '/privacy-policy',
+      child: (_) => const PrivacyPolicyPage(),
     );
   }
 }
